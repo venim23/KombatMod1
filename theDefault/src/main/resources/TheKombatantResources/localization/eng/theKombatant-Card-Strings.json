@@ -1,0 +1,349 @@
+{
+  "TheKombatant:attAcidSlide": {
+    "NAME": "Acid Slide",
+    "DESCRIPTION": "Deal !D! thekombatant:Mixup damage. NL Apply !M! Poison. NL thekombatant:EX: Gain 1 [E]."
+  },
+  "TheKombatant:attColdEncounter": {
+    "NAME": "Kold Encounter",
+    "DESCRIPTION": "thekombatant:Kombo NL Deal !D! damage. You may play another thekombatant:Kombo.",
+    "UPGRADE_DESCRIPTION": "thekombatant:Kombo NL Deal !D! damage. NL Apply !M! thekombatant:Chilled. You may play another thekombatant:Kombo."
+  },
+  "TheKombatant:attLowKick": {
+    "NAME": "Leg Sweep",
+    "DESCRIPTION": "thekombatant:Kombo NL Deal !D! damage."
+  },
+  "TheKombatant:attJudgement": {
+    "NAME": "Judgment",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! thekombatant:Toasty."
+  },
+  "TheKombatant:attTouchofRain": {
+    "NAME": "Touch of Rain",
+    "DESCRIPTION": "thekombatant:Kombo NL Deal !D!  thekombatant:Mixup damage. NL Draw !M! Kard."
+  },
+  "TheKombatant:attQuickDraw": {
+    "NAME": "Quick Draw",
+    "DESCRIPTION": "Deal !D!  thekombatant:Mixup damage."
+  },
+  "TheKombatant:attUppercut": {
+    "NAME": "Uppercut",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. thekombatant:Extender."
+  },
+  "TheKombatant:attPosessed": {
+    "NAME": "Possessed",
+    "DESCRIPTION": "Deal !D! damage. Whenever you play a thekombatant:Kombo this turn, Draw !M! Kard."
+  },
+  "TheKombatant:attFlamePort": {
+    "NAME": "Flame Port",
+    "DESCRIPTION": "Deal !D! thekombatant:Mixup damage. Apply !M! thekombatant:Toasty. NL thekombatant:Extender."
+  },
+  "TheKombatant:attRoundhouse": {
+    "NAME": "Roundhouse",
+    "DESCRIPTION": "Deal !D! damage. NL Add 1 Roundhouse from your draw pile to your hand. NL It's damage is increased by !M! for this combat."
+  },
+  "TheKombatant:attWeWin": {
+    "NAME": "We Win",
+    "DESCRIPTION": "thekombatant:Kombo NL Deal !D! damage to an enemy twice. NL [#F4D03F]Special[] thekombatant:Cancel."
+  },
+  "TheKombatant:attAcidSpit": {
+    "NAME": "Acid Spit",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Poison."
+  },
+  "TheKombatant:attIceSlide": {
+    "NAME": "Ice Slide",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL thekombatant:EX: Apply !M! thekombatant:Chilled to ALL enemies."
+  },
+  "TheKombatant:attFrostBitten": {
+    "NAME": "Frost Bitten",
+    "DESCRIPTION": "thekombatant:Kombo NL Deal !D! damage.  NL Deals bonus damage to ALL enemies based upon target's thekombatant:Chilled. NL [#F4D03F]Special[] thekombatant:Cancel."
+  },
+  "TheKombatant:attEvilTwin": {
+    "NAME": "Evil Twin",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies."
+  },
+  "TheKombatant:attThrow": {
+    "NAME": "Throw",
+    "DESCRIPTION": "Deal !D! unblockable damage. NL If the target was planning to attack, gain !B! Block."
+  },
+  "TheKombatant:attGodsRage": {
+    "NAME": "God's Rage",
+    "DESCRIPTION": "Deal !D! damage to a random enemy. NL Discard a kard.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to a random enemy. NL Discard a kard. Draw a kard."
+  },
+  "TheKombatant:attArcticAssault": {
+    "NAME": "Arctic Assault",
+    "DESCRIPTION": "thekombatant:Kombo NL Deal !D! damage. NL Apply !M! thekombatant:Chilled."
+  },
+  "TheKombatant:attCurse": {
+    "NAME": "Kurse",
+    "DESCRIPTION": "Deal !D! damage for each attack played this turn. NL ",
+    "EXTENDED_DESCRIPTION": ["Attacks this turn: "]
+  },
+  "TheKombatant:attCertainDeath": {
+    "NAME": "Certain Death",
+    "DESCRIPTION": "thekombatant:Kombo NL Deal !D! damage. Discard !M! kards. Deal half that damage again."
+  },
+  "TheKombatant:attDamnation": {
+    "NAME": "Damnation",
+    "DESCRIPTION": "thekombatant:Kombo NL Deal !D! damage. NL If the target has thekombatant:Toasty, [#F4D03F]Special[] thekombatant:Cancel."
+  },
+  "TheKombatant:attSwampStrikes": {
+    "NAME": "Swamp Strikes",
+    "DESCRIPTION": "Deal !D! damage. NL If the target has Poison, apply !M! Vulnerable."
+  },
+  "TheKombatant:attFlyingThundergod": {
+    "NAME": "Flying Thunder God",
+    "DESCRIPTION": "Deal !D! damage. NL thekombatant:EX: to ALL enemies."
+  },
+  "TheKombatant:attGodFist": {
+  "NAME": "God Fists",
+  "DESCRIPTION": "Deal !D! damage to !M! random enemies. Each hit gains 1 extra [#F4D03F]Meter[]."
+},
+  "TheKombatant:attWaterfall": {
+    "NAME": "Waterfall",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "TheKombatant:attFaceEater": {
+    "NAME": "Face Eater",
+    "DESCRIPTION": "Deal !D! damage. Gain !M! Temporary HP. NL Exhaust."
+  },
+  "TheKombatant:attFannado": {
+    "NAME": "Fannado",
+    "DESCRIPTION": "Deal !D! damage. NL If the next played kard is a regular Attack, refund it's [E] cost."
+  },
+  "TheKombatant:attGravedigger": {
+    "NAME": "Gravedigger",
+    "DESCRIPTION": "thekombatant:Kombo NL Deal !D! damage. Return a Special from your discard to your hand.",
+    "UPGRADE_DESCRIPTION": "thekombatant:Kombo NL Deal !D! damage. Return a Special from your discard to your hand. NL [#F4D03F]Special thekombatant:Cancel."
+  },
+  "TheKombatant:attWhiteLightning": {
+    "NAME": "White Lightning",
+    "DESCRIPTION": "thekombatant:Kombo NL Deal !D! damage. Gain !M! extra [#F4D03F]Meter.",
+    "UPGRADE_DESCRIPTION": "thekombatant:Kombo NL Deal !D! damage. Gain !M! extra [#F4D03F]Meter. NL thekombatant:Extender."
+  },
+  "TheKombatant:attYouSuck": {
+    "NAME": "You Suck!",
+    "DESCRIPTION": "Deal !D! damage. NL Lose !M! HP. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Lose !M! HP."
+  },
+  "TheKombatant:skillIceBall": {
+    "NAME": "Ice Ball",
+    "DESCRIPTION": "Apply !M! thekombatant:Chilled. NL thekombatant:EX: Convert half of all thekombatant:Chilled on the target to lost Strength.",
+    "UPGRADE_DESCRIPTION": "Apply !M! thekombatant:Chilled. NL thekombatant:Extender. NL thekombatant:EX: Convert half of all thekombatant:Chilled on the target to lost Strength."
+  },
+  "TheKombatant:attRekindle": {
+    "NAME": "Rekindle",
+    "DESCRIPTION": "thekombatant:Kombo NL Deal !D! thekombatant:Mixup damage. Shuffle this kard back into your draw deck."
+  },
+  "TheKombatant:attSoulBall": {
+    "NAME": "Soul Ball",
+    "DESCRIPTION": "Deal !D! Damage. You may play a thekombatant:Kombo NL thekombatant:EX: thekombatant:Extender."
+  },
+  "TheKombatant:attSoulChoke": {
+    "NAME": "Soul Choke",
+    "DESCRIPTION": "thekombatant:Kombo NL Deal !D! Damage. NL thekombatant:EX: Gain half the damage dealt as Temporary Health."
+  },
+  "TheKombatant:attColdBlooded": {
+    "NAME": "Kold Blooded",
+    "DESCRIPTION": "thekombatant:Kombo NL Deal !D! Damage twice. NL Deals !M! additional damage for every Poison or thekombatant:Chilled on the target."
+  },
+  "TheKombatant:attBicycleKick": {
+    "NAME": "Bicycle Kick",
+    "DESCRIPTION": "thekombatant:Kombo NL Deal !D! damage !M! times. NL thekombatant:EX: Deal !D! damage !M! additional times."
+  },
+  "TheKombatant:attShortHop": {
+    "NAME": "Short Hop",
+    "DESCRIPTION": "Deal !D! thekombatant:Mixup damage. NL Draw !M! Kards.",
+    "UPGRADE_DESCRIPTION": "Deal !D! thekombatant:Mixup damage. NL Draw !M! Kards."
+  },
+  "TheKombatant:attTeleslam": {
+    "NAME": "Teleslam",
+    "DESCRIPTION": "Deal !D! Damage. NL If the target doesn't have Block, deal that damage again. Exhaust. NL thekombatant:EX: This kard isn't Exhausted."
+  },
+  "TheKombatant:attHighStrike_s": {
+    "NAME": "High Strike",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "TheKombatant:attFatality": {
+    "NAME": "Fatality",
+    "DESCRIPTION": "thekombatant:Kombo NL Deal !D! damage. If this kills a non-minion target, heal !M!. NL Exhaust."
+  },
+  "TheKombatant:pwrSmokescreen": {
+    "NAME": "Smokescreen",
+    "DESCRIPTION": "Whenever you play a thekombatant:Kombo, gain !M! Block."
+  },
+  "TheKombatant:pwrDrunkenFist": {
+    "NAME": "Drunken Fist",
+    "DESCRIPTION": "Increases the power of thekombatant:Mixup damage attacks by !M!."
+  },
+  "TheKombatant:pwrSecretShang": {
+    "NAME": "Secret Shang Tsung",
+    "DESCRIPTION": "At the beginning of your turn, alternate between gaining !M! Strength and !M! Dexterity."
+  },
+  "TheKombatant:pwrTarkatanRage": {
+    "NAME": "Tarkatan Rage",
+    "DESCRIPTION": "Whenever you lose Health, gain !M! Plated Armor."
+  },
+  "TheKombatant:pwrMeatandGreet": {
+    "NAME": "Meat and Greet",
+    "DESCRIPTION": "Whenever you end your turn without playing a Skill, Heal !M! HP."
+  },
+  "TheKombatant:pwrEtherealSais": {
+    "NAME": "Ethereal Sais",
+    "DESCRIPTION": "Whenever you play !M! thekombatant:Kombos in a turn, thekombatant:Extender. NL This effect cannot stack."
+  },
+  "TheKombatant:pwrHatTricks": {
+  "NAME": "Hat Tricks",
+  "DESCRIPTION": "Ethereal NL Using thekombatant:Extender draws 1 additional kard.",
+  "UPGRADE_DESCRIPTION": "Using thekombatant:Extender draws 1 additional kard."
+},
+  "TheKombatant:skillGuard_s": {
+    "NAME": "Guard",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "TheKombatant:skillDarkness": {
+    "NAME": "Darkness",
+    "DESCRIPTION": "thekombatant:Kombo NL Gain !B! Block. Draw !M! kard.",
+    "UPGRADE_DESCRIPTION": "thekombatant:Kombo NL Gain !B! Block. Draw !M! kard. NL Retain 1 this turn."
+  },
+  "TheKombatant:skillKenshisSpirits": {
+    "NAME": "Kenshi's Spirits",
+    "DESCRIPTION": "[#F4D03F]Special[] thekombatant:Cancel. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "[#F4D03F]Special[] thekombatant:Cancel. You may use a thekombatant:Kombo. NL Exhaust."
+  },
+  "TheKombatant:skillIceKlone": {
+    "NAME": "Ice Klone",
+    "DESCRIPTION": "Gain !B! Block. Next turn gain [E]. Exhaust."
+  },
+  "TheKombatant:skillEnenra": {
+    "NAME": "Enenra",
+    "DESCRIPTION": "Gain !M! Temporary Strength for each Attack played this turn. NL Exhaust. NL ",
+    "EXTENDED_DESCRIPTION": [
+      "Attacks this turn: "
+    ]
+  },
+  "TheKombatant:skillFaceReveal": {
+    "NAME": "Face Reveal",
+    "DESCRIPTION": "Apply !M! Poison, !M! thekombatant:Toasty and !M! thekombatant:Chilled to an enemy."
+  },
+  "TheKombatant:skillHellfire": {
+    "NAME": "Hellfire",
+    "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, apply !M! thekombatant:Toasty to the attacker."
+  },
+  "TheKombatant:skillStealth": {
+    "NAME": "Stealth",
+    "DESCRIPTION": "Gain !M! Buffer. NL You will not be able to play attacks next turn. NL Exhaust."
+  },
+  "TheKombatant:skillSmokeParry": {
+    "NAME": "Vibrations",
+    "DESCRIPTION": "Gain !B! Block. Gain !M! Temporary Dexterity."
+  },
+  "TheKombatant:skillExtraShades": {
+    "NAME": "Extra Shades",
+    "DESCRIPTION": "Gain !B! Block. You may use a thekombatant:Kombo."
+  },
+  "TheKombatant:skillDodgeJump": {
+    "NAME": "Jump In",
+    "DESCRIPTION": "Gain !B! Block. You may use a thekombatant:Kombo."
+  },
+  "TheKombatant:skillSmokeTrap": {
+    "NAME": "Smoke Trap",
+    "DESCRIPTION": "Do something"
+  },
+  "TheKombatant:skillLightningPort": {
+    "NAME": "Spark-Port",
+    "DESCRIPTION": "Gain !B! Block. NL thekombatant:EX: Gain !M! [E]."
+  },
+  "TheKombatant:skillForceBubble": {
+    "NAME": "Force Bubble",
+    "DESCRIPTION": "Apply !M! Poison to an enemy. Gain !B! Block."
+  },
+  "TheKombatant:TestMeterSkill": {
+    "NAME": "tst Meter",
+    "DESCRIPTION": "Gain !M! Meter."
+  },
+  "TheKombatant:skillSpear": {
+    "NAME": "Spear",
+    "DESCRIPTION": "Apply 2 Vulnerable. NL Return the top kard of the Discard into hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Apply 2 Vulnerable. NL Return the top !M! kards of the Discard into hand. NL Exhaust."
+  },
+  "TheKombatant:skillUndyingBlaze": {
+    "NAME": "Undying Blaze",
+    "DESCRIPTION": "Prevents thekombatant:Toasty from being removed from an enemy at the end of the turn. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Prevents thekombatant:Toasty from being removed from an enemy at the end of the turn."
+  },
+  "TheKombatant:skillRestand": {
+    "NAME": "Restand",
+    "DESCRIPTION": "Remove any Chained Power. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Remove any Chained Power. Remove any Weak and Frail as well. Exhaust."
+  },
+  "TheKombatant:skillRunCancel": {
+    "NAME": "Run Kancel",
+    "DESCRIPTION": "thekombatant:Kombo NL thekombatant:Extender. Exhaust",
+    "UPGRADE_DESCRIPTION": "thekombatant:Kombo NL thekombatant:Extender. You may play another thekombatant:kombo Exhaust"
+  },
+  "TheKombatant:skillLowParry": {
+    "NAME": "Low Parry",
+    "DESCRIPTION": "Next turn, gain !B! Block."
+  },
+  "TheKombatant:skillReflect": {
+    "NAME": "Reflect",
+    "DESCRIPTION": "Exhaust a kard. If you do, gain !B! Block."
+  },
+  "TheKombatant:skillHighGarrote": {
+    "NAME": "High Garrote",
+    "DESCRIPTION": "Gain !B! Block. NL The first time you are attacked this turn, the attacker takes !M! damage per hit."
+  },
+  "TheKombatant:skillBreaker": {
+    "NAME": "Breaker",
+    "DESCRIPTION": "Spend 2 Bars of Meter to gain 1 Buffer.",
+    "UPGRADE_DESCRIPTION": "Requires 2 bars of Meter (66%)"
+  },
+  "TheKombatant:skillWhiffPunish": {
+    "NAME": "Whiff Punish",
+    "DESCRIPTION": "If no enemy attacks you this turn, gain !M! Strength until the end of next turn."
+  },
+  "TheKombatant:KombatCommonPower": {
+    "NAME": "Hold Place",
+    "DESCRIPTION": "Gain !M! thedefault:Keyword.",
+    "UPGRADE_DESCRIPTION": "Gain !M! thedefault:Keywords."
+  },
+  "TheKombatant:KombatUncommonAttack": {
+    "NAME": "Big slap",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "TheKombatant:KombatUncommonSkill": {
+    "NAME": "A Better Defend",
+    "DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity."
+  },
+  "TheKombatant:KombatUncommonPower": {
+    "NAME": "Weirdness",
+    "DESCRIPTION": "Gain X thedefault:Keywords.",
+    "UPGRADE_DESCRIPTION": "Gain X +1 thedefault:Keywords."
+  },
+  "TheKombatant:KombatRareAttack": {
+    "NAME": "TOUCH",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "TheKombatant:KombatRareSkill": {
+    "NAME": "For Each Loop x2",
+    "DESCRIPTION": "Apply !M! vulnerable to all enemies, 2 times.",
+    "UPGRADE_DESCRIPTION": "Apply !M! vulnerable to all enemies, 3 times."
+  },
+  "TheKombatant:KombatRarePower": {
+    "NAME": "In-Progress Form",
+    "DESCRIPTION": "At the start of your turn, play a TOUCH."
+  },
+  "TheKombatant:KombatAttackWithVariable": {
+    "NAME": "Special Strike",
+    "DESCRIPTION": "Deal !D! Damage [E] times. NL (Deal !TheKombatant:ENERGY_DAMAGE! damage total.)"
+  },
+  "TheKombatant:KombatSecondMagicNumberSkill": {
+    "NAME": "Cool 2 Number Card",
+    "DESCRIPTION": "Apply !M! vulnerable and !TheKombatant:SecondMagic! poison to an enemy."
+  },
+  "TheKombatant:OrbSkill": {
+    "NAME": "Get Orb",
+    "DESCRIPTION": "Channel 1 Default Orb."
+  }
+}

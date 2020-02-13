@@ -1,0 +1,93 @@
+{
+"TheKombatant:CommonPower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
+},
+        "TheKombatant:RarePower": {
+                "NAME": "Placeholder Power",
+                "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
+},
+        "TheKombatant:MeterPower": {
+                "NAME": "Special Meter",
+                "DESCRIPTIONS": ["Gain Meter by: NL Standard Attacks: #y8 NL Kombo Attacks: #y6 NL Non-enhanced Specials: #y6 NL Blocking an Attack #y5 NL Taking Damage: #y10. NL Current: #b", "% Full. NL #b", "/3 Bars"]
+        },
+        "TheKombatant:SpecialCancelPower": {
+                "NAME": "Special Cancel",
+                "DESCRIPTIONS": ["If the next kard played this turn is a Special, it costs #b1 less [E]."]
+        },
+        "TheKombatant:ToastyPower": {
+                "NAME": "Toasty",
+                "DESCRIPTIONS": ["When attacked this turn, this creature takes #b", " Additional Damage."]
+        },
+        "TheKombatant:DarknessPower": {
+                "NAME": "Darkness",
+                "DESCRIPTIONS": ["This turn, #yRetain #b", " additional Kard.", " additional Kards."]
+        },
+        "TheKombatant:PosessedPower": {
+                "NAME": "Possessed",
+                "DESCRIPTIONS": ["Whenever you play a #yKombo this turn, draw #b", " Kard.", " Kards."]
+        },
+        "TheKombatant:BlazePower": {
+                "NAME": "Undying Blaze",
+                "DESCRIPTIONS": ["Prevents #yToasty from being removed at the end of #b", " Turn."," Turns."]
+        },
+        "TheKombatant:DrunkenFistPower": {
+                "NAME": "Drunken Fist",
+                "DESCRIPTIONS": ["Increases the power of #yMixup damage by #b"]
+        },
+        "TheKombatant:FannadoPower": {
+                "NAME": "Fannado",
+                "DESCRIPTIONS": ["If the next kard played is a regular attack, refund it's energy cost."]
+        },
+        "TheKombatant:SmokescreenPower": {
+                "NAME": "Smokescreen",
+                "DESCRIPTIONS": ["Whenever you play a #yKombo, gain #b", " Block."]
+        },
+        "TheKombatant:SecretshangPower": {
+                "NAME": "Secretly Shang Tsung",
+                "DESCRIPTIONS": ["At the start of each of your turns, Alternate between gaining #b", " #yStrength or #b" , " #yDexterity."]
+        },
+        "TheKombatant:InvisiblePower": {
+                "NAME": "Invisible",
+                "DESCRIPTIONS": ["Next turn you will not be able to play Attacks."]
+        },
+        "TheKombatant:TarkatanPower": {
+                "NAME": "Tarkatan Rage",
+                "DESCRIPTIONS": ["Whenever you lose health, gain #b1 #yPlated #yArmor."]
+        },
+        "TheKombatant:HellfirePower": {
+                "NAME": "Hellfire",
+                "DESCRIPTIONS": ["Whenever you are attacked this turn, apply #b", " #yToasty to the attacker."]
+        },
+        "TheKombatant:WhiffPunishPower": {
+                "NAME": "Whiff Punish",
+                "DESCRIPTIONS": ["If no enemy attacks you this turn, gain #b", " #yStrength until the end of next turn."]
+        },
+        "TheKombatant:GarrotePower": {
+                "NAME": "Garrote Counter",
+                "DESCRIPTIONS": ["The first time you are attacked this turn, retaliate for #b", " damage."]
+        },
+        "TheKombatant:HatTrickPower": {
+                "NAME": "Hat Tricks",
+                "DESCRIPTIONS": ["Using an #yExtender draws #b", " additional kard.", " additional kards."]
+        },
+        "TheKombatant:MeatPower": {
+                "NAME": "Meat and Greet",
+                "DESCRIPTIONS": ["If you do not play any Skills during your turn, #gheal #g", " #gHP ."]
+        },
+        "TheKombatant:ChilledPower": {
+                "NAME": "Chilled",
+                "DESCRIPTIONS": ["When attacking, deals #b", " less damage. Loses half of the stacks after attacking. NL Damage cannot be reduced below #b1."]
+        },
+        "TheKombatant:EtherealSaiPower": {
+                "NAME": "Ethereal Sais",
+                "DESCRIPTIONS": ["Playing #b3 Kombos in a turn gives you an #yExtender. Kombos played this turn: #b"]
+        },
+        "TheKombatant:ChainedPower": {
+                "NAME": "Chained Damage Modifier",
+                "DESCRIPTIONS": [
+                        "Due to using Extenders and Kombos, direct damage dealt is reduced by #b",
+                        "%. NL Until the end of your turn. Max #b80%"
+                ]
+        }
+}

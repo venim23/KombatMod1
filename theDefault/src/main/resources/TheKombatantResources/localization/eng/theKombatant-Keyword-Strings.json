@@ -1,0 +1,68 @@
+[
+  {
+    "NAMES": [
+      "keyword",
+      "keywords"
+    ],
+    "DESCRIPTION": "Whenever you play a card, gain 1 dexterity this turn only."
+  },
+  {
+    "PROPER_NAME": "Meter Burn / EX",
+    "NAMES": [
+      "Meter_Burn",
+      "Meter Burn",
+      "meter_burn",
+      "meter burn",
+      "EX",
+      "ex"
+    ],
+    "DESCRIPTION": "Will spend 1 bar (33%) of Meter to apply this additional effect."
+  },
+  {
+    "NAMES": [
+      "Extender",
+      "extender"
+    ],
+    "DESCRIPTION": "Draw 1 kard and gain 1 [E] but deal 10% less damage for the rest of this turn."
+  },
+  {
+    "NAMES": [
+      "Toasty",
+      "toasty"
+    ],
+    "DESCRIPTION": "When attacked this creature will take additional damage. Lasts until the end of the round."
+  },
+  {
+    "NAMES": [
+      "Kombo",
+      "kombo",
+      "Kombos",
+      "kombos"
+    ],
+    "DESCRIPTION": "Kombo kards must be played after regular attack kards. (Unless specified.)"
+  },
+  {
+    "NAMES": [
+      "Mixup",
+      "mixup"
+    ],
+    "DESCRIPTION": "Mixup damage is 200% effective against Block."
+  },
+  {
+    "NAMES": [
+      "Chilled",
+      "chilled"
+    ],
+    "DESCRIPTION": "Creature will deal less damage, the amount is halved after each of it's attacks."
+  },
+  {
+    "PROPER_NAME": "Special Cancel",
+    "NAMES": [
+      "Special Cancel",
+      "cancel",
+      "Cancel",
+      "special_cancel"
+    ],
+    "DESCRIPTION": "If you follow this Kard with a #bSpecial, it will cost #b1 less [E] ."
+  }
+]
