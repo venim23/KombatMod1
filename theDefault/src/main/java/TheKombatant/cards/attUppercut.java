@@ -3,11 +3,9 @@ package TheKombatant.cards;
 import TheKombatant.Kombatmod;
 import TheKombatant.actions.ExtenderAction;
 import TheKombatant.actions.SFXVAction;
-import TheKombatant.characters.TheDefault;
-import TheKombatant.patches.CardTagEnum;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.util.SoundEffects;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -17,9 +15,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
-import com.megacrit.cardcrawl.vfx.ClangClangClangEffect;
-import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
-import com.megacrit.cardcrawl.vfx.combat.FireballEffect;
 
 import static TheKombatant.Kombatmod.makeCardPath;
 
@@ -46,7 +41,7 @@ public class attUppercut extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 2;
     private static final int DAMAGE = 11;

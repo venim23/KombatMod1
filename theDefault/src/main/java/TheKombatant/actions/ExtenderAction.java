@@ -26,7 +26,7 @@ public class ExtenderAction extends AbstractGameAction {
         this.p = p;
         actionType = ActionType.ENERGY;
         EXTENDERENERGY = 1;
-        CHAINVALUE = 10;
+        CHAINVALUE = 15;
     }
     
     @Override

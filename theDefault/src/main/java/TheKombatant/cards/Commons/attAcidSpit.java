@@ -4,27 +4,20 @@ import TheKombatant.Kombatmod;
 import TheKombatant.actions.SFXVAction;
 import TheKombatant.cards.AbstractDynamicKombatCard;
 import TheKombatant.cards.CardHeaders;
-import TheKombatant.characters.TheDefault;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.patches.CardTagEnum;
 import TheKombatant.powers.SpecialCancelPower;
 import TheKombatant.util.SoundEffects;
-import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
-import com.megacrit.cardcrawl.vfx.combat.FlyingOrbEffect;
-import com.megacrit.cardcrawl.vfx.combat.FlyingSpikeEffect;
-import com.megacrit.cardcrawl.vfx.combat.IceShatterEffect;
 import com.megacrit.cardcrawl.vfx.combat.ThrowDaggerEffect;
-
-import java.awt.*;
 
 import static TheKombatant.Kombatmod.makeCardPath;
 
@@ -40,6 +33,7 @@ public class attAcidSpit extends AbstractDynamicKombatCard {
 
     public static final String ID = Kombatmod.makeID(attAcidSpit.class.getSimpleName());
     public static final String IMG = makeCardPath("attAcidSpit.png");
+    public static final String IMGALT = makeCardPath("attAcidSpitAlt.png");
 
     // /TEXT DECLARATION/
 
@@ -49,7 +43,7 @@ public class attAcidSpit extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 1;
     private static final int CHAINVALUE = 20;
@@ -83,8 +77,8 @@ public class attAcidSpit extends AbstractDynamicKombatCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new SFXVAction(SoundEffects.VgreenSpit.getKey(), 1.1F));
-        AbstractDungeon.actionManager.addToBottom(new SFXVAction(SoundEffects.greenSpit1.getKey(), 1.3F));
+        AbstractDungeon.actionManager.addToBottom(new SFXVAction(SoundEffects.VgreenSpit.getKey(), 1.0F));
+        AbstractDungeon.actionManager.addToBottom(new SFXVAction(SoundEffects.greenSpit1.getKey(), 1.1F));
 
         AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new ThrowDaggerEffect(m.hb.cX , m.hb.cY), 0.3F));
 
@@ -117,6 +111,8 @@ public class attAcidSpit extends AbstractDynamicKombatCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
+            loadCardImage(IMGALT);
+            this.textureImg = IMGALT;
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
             upgradeMagicNumber(UPGRADE_PLUS_POISON);

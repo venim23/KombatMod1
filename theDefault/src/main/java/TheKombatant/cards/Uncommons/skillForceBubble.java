@@ -1,10 +1,11 @@
 package TheKombatant.cards.Uncommons;
 
 import TheKombatant.Kombatmod;
+import TheKombatant.actions.EXEffectAction;
 import TheKombatant.actions.SFXVAction;
 import TheKombatant.cards.AbstractDynamicKombatCard;
 import TheKombatant.cards.CardHeaders;
-import TheKombatant.characters.TheDefault;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.patches.CardTagEnum;
 import TheKombatant.powers.SpecialCancelPower;
 import TheKombatant.util.SoundEffects;
@@ -40,12 +41,12 @@ public class skillForceBubble extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 2;
 
 
-    private static final int BLOCK = 10;
+    private static final int BLOCK = 11;
     private static final int UPBLOCK = 4;
     private static final int POISON = 3;
     private static final int UPPOISON = 1;
@@ -74,7 +75,7 @@ public class skillForceBubble extends AbstractDynamicKombatCard {
 
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
 
-        //AbstractDungeon.actionManager.addToBottom(new EXEffectAction(new ExtenderAction(p)));
+        AbstractDungeon.actionManager.addToBottom(new EXEffectAction(new ApplyPowerAction(p,p,new SpecialCancelPower(p,1),1)));
 
     }
     // Needed for Special Cancel

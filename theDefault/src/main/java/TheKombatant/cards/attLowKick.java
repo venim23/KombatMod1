@@ -1,21 +1,14 @@
 package TheKombatant.cards;
 
 import TheKombatant.Kombatmod;
-import TheKombatant.characters.TheDefault;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.patches.CardTagEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.ConeEffect;
-import com.megacrit.cardcrawl.vfx.combat.EntangleEffect;
-import com.megacrit.cardcrawl.vfx.combat.FireballEffect;
-import com.megacrit.cardcrawl.vfx.combat.IceShatterEffect;
-import com.megacrit.cardcrawl.vfx.combat.SmokeBombEffect;
 
 import static TheKombatant.Kombatmod.makeCardPath;
 
@@ -40,7 +33,7 @@ public class attLowKick extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 0;
     private static final int DAMAGE = 4;

@@ -2,25 +2,18 @@ package TheKombatant.cards.Uncommons;
 
 import TheKombatant.Kombatmod;
 import TheKombatant.actions.FatalityAction;
+import TheKombatant.actions.SFXVAction;
 import TheKombatant.cards.AbstractDynamicKombatCard;
-import TheKombatant.characters.TheDefault;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.patches.CardTagEnum;
-import TheKombatant.powers.ChilledPower;
 import TheKombatant.util.SoundEffects;
-import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PoisonPower;
-import com.megacrit.cardcrawl.vfx.combat.ClawEffect;
 
 import static TheKombatant.Kombatmod.makeCardPath;
 
@@ -48,7 +41,7 @@ public class attFatality extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 1;
     private static final int DAMAGE = 9;
@@ -80,7 +73,7 @@ public class attFatality extends AbstractDynamicKombatCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new SFXAction(SoundEffects.Fatality.getKey()));
+        AbstractDungeon.actionManager.addToBottom(new SFXVAction(SoundEffects.Fatality.getKey(), 1.6F));
             AbstractDungeon.actionManager.addToBottom(new FatalityAction(p, m, new DamageInfo(m, damage, damageTypeForTurn), magicNumber));
 
 

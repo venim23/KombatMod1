@@ -31,7 +31,7 @@ public class CardHeaderSingleView {
             if ((((AbstractKombatCard) card).HasCardHeader(card))){
                 cHeader = ((AbstractKombatCard) card).GetCardHeader();
                 headerplswork = cHeader.NAME;
-                FontHelper.renderFontCentered(sb, FontHelper.SCP_cardTitleFont_small, headerplswork, (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F + 400.0F * Settings.scale, Color.SLATE );
+                FontHelper.renderFontCentered(sb, FontHelper.SCP_cardTitleFont_small, headerplswork, (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F + 400.0F * Settings.scale, Color.GOLD );
 
             }
 

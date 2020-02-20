@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.cards.*;
 
 public class EXEffectAction extends AbstractGameAction {
     private AbstractGameAction action;
-    private int NONEXVAL = 3;
+    private int NONEXVAL = 6;
 
     public EXEffectAction (AbstractGameAction EXEffect){
         this.action = EXEffect;
@@ -23,7 +23,8 @@ public class EXEffectAction extends AbstractGameAction {
         if (AbstractDungeon.player.hasPower(MeterPower.POWER_ID)){
             if (AbstractDungeon.player.getPower(MeterPower.POWER_ID).amount >=33){
                 AbstractDungeon.actionManager.addToTop(this.action);
-                AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, MeterPower.POWER_ID, 33));
+                AbstractDungeon.actionManager.addToBottom(new BetterReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, MeterPower.POWER_ID, 33));
+
             } else {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new MeterPower(AbstractDungeon.player, NONEXVAL),NONEXVAL));
             }

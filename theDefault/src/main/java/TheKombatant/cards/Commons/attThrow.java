@@ -3,7 +3,7 @@ package TheKombatant.cards.Commons;
 import TheKombatant.Kombatmod;
 import TheKombatant.actions.SFXVAction;
 import TheKombatant.cards.AbstractDynamicKombatCard;
-import TheKombatant.characters.TheDefault;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.util.SoundEffects;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -35,10 +35,10 @@ public class attThrow extends AbstractDynamicKombatCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 1;
     private static final int DAMAGE = 4;

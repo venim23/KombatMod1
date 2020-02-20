@@ -5,7 +5,7 @@ import TheKombatant.actions.BkickAction;
 import TheKombatant.actions.EXEffectAction;
 import TheKombatant.cards.AbstractDynamicKombatCard;
 import TheKombatant.cards.CardHeaders;
-import TheKombatant.characters.TheDefault;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.patches.CardTagEnum;
 import TheKombatant.powers.SpecialCancelPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -38,11 +38,11 @@ public class attBicycleKick extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 2;
     private static final int CHAINVALUE = 20;
-    private static final int DAMAGE = 5;
+    private static final int DAMAGE = 4;
     private static final int TIMES = 3;
     private static final int UPGRADE_PLUS_DMG = 2;
     private boolean CostModded = false;

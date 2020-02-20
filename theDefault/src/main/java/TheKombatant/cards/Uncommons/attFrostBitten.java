@@ -2,7 +2,7 @@ package TheKombatant.cards.Uncommons;
 
 import TheKombatant.Kombatmod;
 import TheKombatant.cards.AbstractDynamicKombatCard;
-import TheKombatant.characters.TheDefault;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.patches.CardTagEnum;
 import TheKombatant.powers.ChilledPower;
 import TheKombatant.powers.SpecialCancelPower;
@@ -13,17 +13,12 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.blue.Chill;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PoisonPower;
-import com.megacrit.cardcrawl.vfx.combat.ClawEffect;
 import com.megacrit.cardcrawl.vfx.combat.FlyingSpikeEffect;
-import com.megacrit.cardcrawl.vfx.combat.FrostOrbActivateEffect;
-import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 
 import java.util.ArrayList;
 
@@ -53,10 +48,10 @@ public class attFrostBitten extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 2;
-    private static final int DAMAGE = 16;
+    private static final int DAMAGE = 14;
     private static final int UPDAMAGE = 6;
 
 
@@ -64,7 +59,7 @@ public class attFrostBitten extends AbstractDynamicKombatCard {
     private static final int UPGRADE_PLUS_BONUS = 1;
 
     //Stuff for Kombatant
-    private static final boolean ComboCard = true;
+    private static final boolean ComboCard = false;
     private static final boolean SpecialCard = false;
     private static final boolean EnhancedEffect = false;
 
@@ -77,8 +72,6 @@ public class attFrostBitten extends AbstractDynamicKombatCard {
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = BONUS;
 
-
-        tags.add(CardTagEnum.COMBO);
         tags.add(CardTagEnum.CANCEL);
         //Tags
 
@@ -91,7 +84,7 @@ public class attFrostBitten extends AbstractDynamicKombatCard {
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
                         AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p, new SpecialCancelPower(p,1),1));
+
 
         if (m.hasPower(ChilledPower.POWER_ID)){
             ArrayList<AbstractMonster> mo = AbstractDungeon.getCurrRoom().monsters.monsters;
@@ -110,6 +103,8 @@ public class attFrostBitten extends AbstractDynamicKombatCard {
                     new DamageAllEnemiesAction(p,tmp, damageTypeForTurn,
                             AbstractGameAction.AttackEffect.BLUNT_LIGHT, false));
         }
+
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p, new SpecialCancelPower(p,1),1));
 
 
     }

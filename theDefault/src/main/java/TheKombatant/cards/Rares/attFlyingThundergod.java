@@ -5,7 +5,7 @@ import TheKombatant.actions.EXEffectAction;
 import TheKombatant.actions.ThunderAllAction;
 import TheKombatant.cards.AbstractDynamicKombatCard;
 import TheKombatant.cards.CardHeaders;
-import TheKombatant.characters.TheDefault;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.patches.CardTagEnum;
 import TheKombatant.powers.MeterPower;
 import TheKombatant.powers.SpecialCancelPower;
@@ -15,7 +15,9 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static TheKombatant.Kombatmod.makeCardPath;
@@ -32,6 +34,8 @@ public class attFlyingThundergod extends AbstractDynamicKombatCard {
 
     public static final String ID = Kombatmod.makeID(attFlyingThundergod.class.getSimpleName());
     public static final String IMG = makeCardPath("attFlyingThunderGod.png");
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -39,13 +43,13 @@ public class attFlyingThundergod extends AbstractDynamicKombatCard {
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 3;
-    private static final int DAMAGE = 30;
-    private static final int UPDAMAGE = 10;
+    private static final int DAMAGE = 36;
+    private static final int UPDAMAGE = 9;
     private boolean CostModded = false;
 
 
@@ -72,16 +76,26 @@ public class attFlyingThundergod extends AbstractDynamicKombatCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new SFXAction(SoundEffects.Flying.getKey()));
-        if (p.hasPower(MeterPower.POWER_ID)){
-            if (p.getPower(MeterPower.POWER_ID).amount < 33){
-                AbstractDungeon.actionManager.addToBottom(
-                        new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
-                                AbstractGameAction.AttackEffect.LIGHTNING));
-            } else {
-                AbstractDungeon.actionManager.addToBottom(new EXEffectAction(new ThunderAllAction(p,damage)));
-            }
-        }
+        AbstractDungeon.actionManager.addToBottom(new EXEffectAction(new ThunderAllAction(p,damage)));
 
+    }
+
+    public boolean canUse(AbstractPlayer p, AbstractMonster m)
+    {
+        boolean canUse = super.canUse(p, m);
+        if (!canUse) {
+            return false;
+        }
+        if (p.hasPower(MeterPower.POWER_ID)){
+            if (p.getPower(MeterPower.POWER_ID).amount < 33) {
+                this.cantUseMessage = UPGRADE_DESCRIPTION;
+                return false;
+            }
+        }else {
+            this.cantUseMessage = UPGRADE_DESCRIPTION;
+            return false;
+        }
+        return canUse;
     }
 
 

@@ -1,8 +1,9 @@
 package TheKombatant.cards.Uncommons;
 
 import TheKombatant.Kombatmod;
+import TheKombatant.actions.BetterReducePowerAction;
 import TheKombatant.cards.AbstractDynamicKombatCard;
-import TheKombatant.characters.TheDefault;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.powers.MeterPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -40,7 +41,7 @@ public class skillBreaker extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 2;
     private static final int COSTUP = 1;
@@ -79,7 +80,7 @@ public class skillBreaker extends AbstractDynamicKombatCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p,p,MeterPower.POWER_ID, magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new BetterReducePowerAction(p,p,MeterPower.POWER_ID, magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new BufferPower(p,BUFFERS),BUFFERS));
     }
     // Needed for Special Cancel

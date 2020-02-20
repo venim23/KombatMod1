@@ -6,7 +6,7 @@ import TheKombatant.actions.ExtenderAction;
 import TheKombatant.actions.SFXVAction;
 import TheKombatant.cards.AbstractDynamicKombatCard;
 import TheKombatant.cards.CardHeaders;
-import TheKombatant.characters.TheDefault;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.patches.CardTagEnum;
 import TheKombatant.powers.SpecialCancelPower;
 import TheKombatant.util.SoundEffects;
@@ -33,6 +33,8 @@ public class attSoulBall extends AbstractDynamicKombatCard {
 
     public static final String ID = Kombatmod.makeID(attSoulBall.class.getSimpleName());
     public static final String IMG = makeCardPath("attSoulBall.png");
+    public static final String IMGALT = makeCardPath("attSoulBallAlt.png");
+
 
     // /TEXT DECLARATION/
 
@@ -42,11 +44,11 @@ public class attSoulBall extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 2;
-    private static final int DAMAGE = 12;
-    private static final int UPGRADE_PLUS_DMG = 5;
+    private static final int DAMAGE = 14;
+    private static final int UPGRADE_PLUS_DMG = 6;
     private boolean CostModded = false;
 
     //Stuff for Kombatant
@@ -108,6 +110,8 @@ public class attSoulBall extends AbstractDynamicKombatCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
+            loadCardImage(IMGALT);
+            this.textureImg = IMGALT;
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
             initializeDescription();

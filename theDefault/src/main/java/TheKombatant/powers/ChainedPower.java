@@ -40,7 +40,7 @@ public class ChainedPower extends AbstractPower implements CloneablePowerInterfa
     public ChainedPower(final AbstractCreature owner, final int amount) {
         name = NAME;
         ID = POWER_ID;
-        ChainedMax = 80;
+        ChainedMax = 100;
         this.owner = owner;
         this.amount = amount;
 

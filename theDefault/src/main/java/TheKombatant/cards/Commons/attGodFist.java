@@ -3,21 +3,17 @@ package TheKombatant.cards.Commons;
 import TheKombatant.Kombatmod;
 import TheKombatant.actions.SFXVAction;
 import TheKombatant.cards.AbstractDynamicKombatCard;
-import TheKombatant.characters.TheDefault;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.patches.CardTagEnum;
 import TheKombatant.powers.MeterPower;
 import TheKombatant.util.SoundEffects;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.IceShatterEffect;
-import com.megacrit.cardcrawl.vfx.combat.ThrowDaggerEffect;
 
 import static TheKombatant.Kombatmod.makeCardPath;
 
@@ -40,9 +36,9 @@ public class attGodFist extends AbstractDynamicKombatCard {
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 1;
     private static final int DAMAGE = 4;
@@ -79,7 +75,7 @@ public class attGodFist extends AbstractDynamicKombatCard {
         for (int i = this.magicNumber; i > 0; i--){
             AbstractDungeon.actionManager.addToBottom(new SFXVAction(SoundEffects.Shock1.getKey(), 1.1F));
 
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p, new MeterPower(p,1), 1));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p, new MeterPower(p,2), 2));
             AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
             AbstractDungeon.actionManager.addToBottom(
                     new DamageAction(randomMonster, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));

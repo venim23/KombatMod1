@@ -2,7 +2,7 @@ package TheKombatant.cards.Rares;
 
 import TheKombatant.Kombatmod;
 import TheKombatant.cards.AbstractDynamicKombatCard;
-import TheKombatant.characters.TheDefault;
+import TheKombatant.characters.TheKombatant;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -15,7 +15,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.BiteEffect;
-import com.megacrit.cardcrawl.vfx.combat.ClawEffect;
 
 import static TheKombatant.Kombatmod.makeCardPath;
 
@@ -42,12 +41,12 @@ public class attFaceEater extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 10;
-    private static final int HPTEMP = 6;
-    private static final int UPGRADE_PLUS_HPTEMP = 4;
+    private static final int DAMAGE = 11;
+    private static final int HPTEMP = 8;
+    private static final int UPGRADE_PLUS_HPTEMP = 7;
 
     //Stuff for Kombatant
     private static final boolean ComboCard = false;

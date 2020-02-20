@@ -1,11 +1,8 @@
 package TheKombatant.cards;
 
 import TheKombatant.Kombatmod;
-import basemod.abstracts.CustomCard;
-import basemod.helpers.BaseModCardTags;
-import com.badlogic.gdx.graphics.Color;
+import TheKombatant.characters.TheKombatant;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,8 +10,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import TheKombatant.characters.TheDefault;
-import com.megacrit.cardcrawl.vfx.combat.*;
 
 import static TheKombatant.Kombatmod.makeCardPath;
 // "How come this card extends CustomCard and not DynamicCard like all the rest?"
@@ -59,7 +54,7 @@ public class attHighStrike_s extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
 
     private static final boolean ComboCard = false;

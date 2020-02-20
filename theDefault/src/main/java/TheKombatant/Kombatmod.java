@@ -3,12 +3,13 @@ package TheKombatant;
 import TheKombatant.cards.Commons.*;
 import TheKombatant.cards.Rares.*;
 import TheKombatant.cards.Uncommons.*;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.relics.*;
 import TheKombatant.util.SoundEffects;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
-import basemod.helpers.RelicType;
+import basemod.abstracts.CustomUnlockBundle;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -19,18 +20,15 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.unlock.AbstractUnlock;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import javafx.util.Pair;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import TheKombatant.cards.*;
-import TheKombatant.characters.TheDefault;
-import TheKombatant.events.IdentityCrisisEvent;
-import TheKombatant.potions.PlaceholderPotion;
 import TheKombatant.util.IDCheckDontTouchPls;
 import TheKombatant.util.TextureLoader;
 import TheKombatant.variables.DefaultCustomVariable;
@@ -77,7 +75,8 @@ public class Kombatmod implements
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
         AddAudioSubscriber,
-        PostInitializeSubscriber {
+        PostInitializeSubscriber,
+        SetUnlocksSubscriber{
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
     public static final Logger logger = LogManager.getLogger(Kombatmod.class.getName());
@@ -123,6 +122,7 @@ public class Kombatmod implements
     private static final String ATTACK_DEFAULT_GRAY_PORTRAIT = "TheKombatantResources/images/1024/bg_attack_BKMK.png";
     private static final String SKILL_DEFAULT_GRAY_PORTRAIT = "TheKombatantResources/images/1024/bg_Skill_BKMK.png";
     private static final String POWER_DEFAULT_GRAY_PORTRAIT = "TheKombatantResources/images/1024/bg_Power_BKMK.png";
+
     private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "TheKombatantResources/images/1024/card_default_gray_orb.png";
     
     // Character assets
@@ -207,9 +207,9 @@ public class Kombatmod implements
         
         logger.info("Done subscribing");
         
-        logger.info("Creating the color " + TheDefault.Enums.COLOR_SLATE.toString());
+        logger.info("Creating the color " + TheKombatant.Enums.COLOR_SLATE.toString());
         
-        BaseMod.addColor(TheDefault.Enums.COLOR_SLATE, KOMBAT_SLATE, KOMBAT_SLATE, KOMBAT_SLATE,
+        BaseMod.addColor(TheKombatant.Enums.COLOR_SLATE, KOMBAT_SLATE, KOMBAT_SLATE, KOMBAT_SLATE,
                 KOMBAT_SLATE, KOMBAT_SLATE, KOMBAT_SLATE, KOMBAT_SLATE,
                 ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY, ENERGY_ORB_DEFAULT_GRAY,
                 ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT, POWER_DEFAULT_GRAY_PORTRAIT,
@@ -292,13 +292,13 @@ public class Kombatmod implements
     
     @Override
     public void receiveEditCharacters() {
-        logger.info("Beginning to edit characters. " + "Add " + TheDefault.Enums.THE_KOMBATANT.toString());
+        logger.info("Beginning to edit characters. " + "Add " + TheKombatant.Enums.THE_KOMBATANT.toString());
         
-        BaseMod.addCharacter(new TheDefault("the Default", TheDefault.Enums.THE_KOMBATANT),
-                THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, TheDefault.Enums.THE_KOMBATANT);
+        BaseMod.addCharacter(new TheKombatant("the Default", TheKombatant.Enums.THE_KOMBATANT),
+                THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, TheKombatant.Enums.THE_KOMBATANT);
         
         receiveEditPotions();
-        logger.info("Added " + TheDefault.Enums.THE_KOMBATANT.toString());
+        logger.info("Added " + TheKombatant.Enums.THE_KOMBATANT.toString());
     }
     
     // =============== /LOAD THE CHARACTER/ =================
@@ -357,6 +357,7 @@ public class Kombatmod implements
     @Override
     public void receiveAddAudio() {
         addAudio(SoundEffects.Fatality);
+        addAudio(SoundEffects.toasty);
         addAudio(SoundEffects.Suck);
         addAudio(SoundEffects.Spear);
         addAudio(SoundEffects.Fight);
@@ -433,7 +434,7 @@ public class Kombatmod implements
         // Class Specific Potion. If you want your potion to not be class-specific,
         // just remove the player class at the end (in this case the "TheDefaultEnum.THE_DEFAULT".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
-        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, TheDefault.Enums.THE_KOMBATANT);
+        //BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, TheKombatant.Enums.THE_KOMBATANT);
         
         logger.info("Done editing potions");
     }
@@ -448,10 +449,17 @@ public class Kombatmod implements
         logger.info("Adding relics");
         
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-        //BaseMod.addRelicToCustomPool(new PlaceholderRelic(), TheDefault.Enums.COLOR_SLATE);
-        BaseMod.addRelicToCustomPool(new ShinnoksAmuletRelic(), TheDefault.Enums.COLOR_SLATE);
-       // BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheDefault.Enums.COLOR_SLATE);
-        //BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheDefault.Enums.COLOR_SLATE);
+        //BaseMod.addRelicToCustomPool(new PlaceholderRelic(), TheKombatant.Enums.COLOR_SLATE);
+        //BaseMod.addRelicToCustomPool(new ShinnoksAmuletRelic(), TheKombatant.Enums.COLOR_SLATE);
+        BaseMod.addRelicToCustomPool(new Shinnoks2ndAmuletRelic(), TheKombatant.Enums.COLOR_SLATE);
+        BaseMod.addRelicToCustomPool(new JinseiRelic(), TheKombatant.Enums.COLOR_SLATE);
+        BaseMod.addRelicToCustomPool(new BookofBoonRelic(), TheKombatant.Enums.COLOR_SLATE);
+        BaseMod.addRelicToCustomPool(new TasteofSaltRelic(), TheKombatant.Enums.COLOR_SLATE);
+        BaseMod.addRelicToCustomPool(new CoreCyraxRelic(), TheKombatant.Enums.COLOR_SLATE);
+        BaseMod.addRelicToCustomPool(new CoreSektorRelic(), TheKombatant.Enums.COLOR_SLATE);
+        BaseMod.addRelicToCustomPool(new CoreSmokeRelic(), TheKombatant.Enums.COLOR_SLATE);
+       // BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheKombatant.Enums.COLOR_SLATE);
+        //BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheKombatant.Enums.COLOR_SLATE);
         
         // This adds a relic to the Shared pool. Every character can find this relic.
         //BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
@@ -483,6 +491,7 @@ public class Kombatmod implements
         // when generating card rewards/shop screen items.
 
         BaseMod.addCard(new attAcidSlide());
+        BaseMod.addCard(new attElderStorm());
         BaseMod.addCard(new attArcticAssault());
         BaseMod.addCard(new attLowKick());
         BaseMod.addCard(new attTeleslam());
@@ -502,6 +511,7 @@ public class Kombatmod implements
         BaseMod.addCard(new attEvilTwin());
         BaseMod.addCard(new attFannado());
         BaseMod.addCard(new attDamnation());
+        BaseMod.addCard(new attSheddingSkin());
         BaseMod.addCard(new attQuickDraw());
         BaseMod.addCard(new attPosessed());
         BaseMod.addCard(new attGodFist());
@@ -511,6 +521,7 @@ public class Kombatmod implements
         BaseMod.addCard(new attShortHop());
         BaseMod.addCard(new attThrow());
         BaseMod.addCard(new attSoulChoke());
+        BaseMod.addCard(new attRisingThunder());
         BaseMod.addCard(new attFrostBitten());
         BaseMod.addCard(new attSwampStrikes());
         BaseMod.addCard(new attGodsRage());
@@ -526,11 +537,14 @@ public class Kombatmod implements
         BaseMod.addCard(new pwrSecretShang());
         BaseMod.addCard(new pwrHatTricks());
         BaseMod.addCard(new pwrDrunkenFist());
+        BaseMod.addCard(new pwrToxicAir());
         BaseMod.addCard(new pwrMeatandGreet());
         BaseMod.addCard(new pwrEtherealSais());
         BaseMod.addCard(new pwrTarkatanRage());
         BaseMod.addCard(new skillSpear());
         BaseMod.addCard(new skillStealth());
+        BaseMod.addCard(new skillCyberInitiative());
+        BaseMod.addCard(new skillFlameFists());
         BaseMod.addCard(new skillHighGarrote());
         BaseMod.addCard(new skillSmokeParry());
         BaseMod.addCard(new skillLowParry());
@@ -568,6 +582,8 @@ public class Kombatmod implements
         UnlockTracker.unlockCard(skillSpear.ID);
         UnlockTracker.unlockCard(skillLowParry.ID);
         UnlockTracker.unlockCard(skillDarkness.ID);
+        UnlockTracker.unlockCard(skillHellfire.ID);
+        UnlockTracker.unlockCard(skillRunCancel.ID);
         UnlockTracker.unlockCard(skillHighGarrote.ID);
         UnlockTracker.unlockCard(skillLightningPort.ID);
         UnlockTracker.unlockCard(skillRestand.ID);
@@ -580,17 +596,19 @@ public class Kombatmod implements
         UnlockTracker.unlockCard(attFrostBitten.ID);
         UnlockTracker.unlockCard(attUppercut.ID);
         UnlockTracker.unlockCard(attAcidSlide.ID);
+        UnlockTracker.unlockCard(attElderStorm.ID);
         UnlockTracker.unlockCard(attSoulChoke.ID);
         UnlockTracker.unlockCard(attQuickDraw.ID);
         UnlockTracker.unlockCard(attAcidSpit.ID);
-        UnlockTracker.unlockCard(attBicycleKick.ID);
+        //UnlockTracker.unlockCard(attBicycleKick.ID);
+        UnlockTracker.unlockCard(attRisingThunder.ID);
         UnlockTracker.unlockCard(attCurse.ID);
         UnlockTracker.unlockCard(attTouchofRain.ID);
         UnlockTracker.unlockCard(attFatality.ID);
         UnlockTracker.unlockCard(attFaceEater.ID);
         UnlockTracker.unlockCard(attFlyingThundergod.ID);
         UnlockTracker.unlockCard(attTeleslam.ID);
-        UnlockTracker.unlockCard(attYouSuck.ID);
+        //UnlockTracker.unlockCard(attYouSuck.ID);
         UnlockTracker.unlockCard(attEvilTwin.ID);
         UnlockTracker.unlockCard(attCertainDeath.ID);
         UnlockTracker.unlockCard(attColdBlooded.ID);
@@ -604,6 +622,7 @@ public class Kombatmod implements
         UnlockTracker.unlockCard(attRoundhouse.ID);
         UnlockTracker.unlockCard(attJudgement.ID);
         UnlockTracker.unlockCard(attFannado.ID);
+        UnlockTracker.unlockCard(attSheddingSkin.ID);
         UnlockTracker.unlockCard(attRekindle.ID);
         UnlockTracker.unlockCard(skillIceBall.ID);
         UnlockTracker.unlockCard(attIceSlide.ID);
@@ -618,10 +637,13 @@ public class Kombatmod implements
         UnlockTracker.unlockCard(pwrEtherealSais.ID);
         UnlockTracker.unlockCard(pwrMeatandGreet.ID);
         UnlockTracker.unlockCard(pwrHatTricks.ID);
+        UnlockTracker.unlockCard(pwrToxicAir.ID);
         UnlockTracker.unlockCard(pwrDrunkenFist.ID);
         UnlockTracker.unlockCard(pwrSecretShang.ID);
         UnlockTracker.unlockCard(pwrSmokescreen.ID);
-        UnlockTracker.unlockCard(pwrTarkatanRage.ID);
+
+
+       // UnlockTracker.unlockCard(pwrTarkatanRage.ID);
 
 
 
@@ -630,11 +652,40 @@ public class Kombatmod implements
 
 
 
-        UnlockTracker.unlockCard(skillStealth.ID);
+        //UnlockTracker.unlockCard(skillStealth.ID);
 
 
 
         logger.info("Done adding cards!");
+    }
+
+
+
+
+    public void receiveSetUnlocks() {
+        BaseMod.addUnlockBundle(new CustomUnlockBundle(attYouSuck.ID, attBicycleKick.ID, pwrTarkatanRage.ID), TheKombatant.Enums.THE_KOMBATANT, 0);
+        UnlockTracker.addCard(attYouSuck.ID);
+        UnlockTracker.addCard(attBicycleKick.ID);
+        UnlockTracker.addCard(pwrTarkatanRage.ID);
+        BaseMod.addUnlockBundle(new CustomUnlockBundle(AbstractUnlock.UnlockType.RELIC, JinseiRelic.ID, BookofBoonRelic.ID, TasteofSaltRelic.ID), TheKombatant.Enums.THE_KOMBATANT, 1);
+        UnlockTracker.addRelic(JinseiRelic.ID);
+        UnlockTracker.addRelic(BookofBoonRelic.ID);
+        UnlockTracker.addRelic(TasteofSaltRelic.ID);
+        BaseMod.addUnlockBundle(new CustomUnlockBundle(skillStealth.ID, skillFlameFists.ID, skillCyberInitiative.ID), TheKombatant.Enums.THE_KOMBATANT, 2);
+        UnlockTracker.addCard(skillStealth.ID);
+        UnlockTracker.addCard(skillFlameFists.ID);
+        UnlockTracker.addCard(skillCyberInitiative.ID);
+        BaseMod.addUnlockBundle(new CustomUnlockBundle(AbstractUnlock.UnlockType.RELIC, CoreCyraxRelic.ID, CoreSektorRelic.ID, CoreSmokeRelic.ID),TheKombatant.Enums.THE_KOMBATANT, 3);
+        UnlockTracker.addRelic(CoreCyraxRelic.ID);
+        UnlockTracker.addRelic(CoreSektorRelic.ID);
+        UnlockTracker.addRelic(CoreSmokeRelic.ID);
+        /*
+        BaseMod.addUnlockBundle(new CustomUnlockBundle(skillPaleKingsBlessing.ID, powerWhiteLadysBlessing.ID, skillRadiancesLament.ID), TheBugKnight.Enums.THE_BUGKNIGHT, 4);
+        UnlockTracker.addCard(skillPaleKingsBlessing.ID);
+        UnlockTracker.addCard(powerWhiteLadysBlessing.ID);
+        UnlockTracker.addCard(skillRadiancesLament.ID);
+    */
+
     }
     
     // There are better ways to do this than listing every single individual card, but I do not want to complicate things

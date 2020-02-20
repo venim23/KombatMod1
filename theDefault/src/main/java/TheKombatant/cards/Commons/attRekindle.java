@@ -3,12 +3,10 @@ package TheKombatant.cards.Commons;
 import TheKombatant.Kombatmod;
 import TheKombatant.actions.MixupDamageAction;
 import TheKombatant.cards.AbstractDynamicKombatCard;
-import TheKombatant.characters.TheDefault;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.patches.CardTagEnum;
 import TheKombatant.powers.DrunkenFistPower;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -36,14 +34,15 @@ public class attRekindle extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 10;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int DAMAGE = 6;
+    private static final int CARDS = 1;
+    private static final int UPGRADE_PLUS_DMG = 2;
 
     //Stuff for Kombatant
-    private static final boolean ComboCard = true;
+    private static final boolean ComboCard = false;
     private static final boolean SpecialCard = false;
     private static final boolean EnhancedEffect = false;
 
@@ -54,9 +53,8 @@ public class attRekindle extends AbstractDynamicKombatCard {
     public attRekindle() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET, ComboCard, SpecialCard, EnhancedEffect);
         baseDamage = DAMAGE;
-
+        magicNumber = baseMagicNumber = CARDS;
         //Tags
-        tags.add(CardTagEnum.COMBO);
 
     }
 
@@ -67,7 +65,7 @@ public class attRekindle extends AbstractDynamicKombatCard {
 
         AbstractDungeon.actionManager.addToBottom(
                 new MixupDamageAction(p, m, damage));
-
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(magicNumber));
         this.shuffleBackIntoDrawPile = true;
 
     }

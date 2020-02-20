@@ -13,11 +13,60 @@
       "At the start of each combat, gain #b1 #yStrength."
     ]
   },
+  "TheKombatant:JinseiRelic": {
+    "NAME": "Jinsei Basin",
+    "FLAVOR": "You feel the Lifeforce of Earthrealm.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, gain #b1 Bar (33%) of #yMeter."
+    ]
+  },
+  "TheKombatant:TasteofSaltRelic": {
+    "NAME": "Taste of Salt",
+    "FLAVOR": "Crouch, Crouch, Crouch, Crouch, Crouch.",
+    "DESCRIPTIONS": [
+      "Whenever you draw a #ySpecial, gain #b2 Block."
+    ]
+  },
+  "TheKombatant:CoreCyraxRelic": {
+    "NAME": "Core: Cyrax",
+    "FLAVOR": "Core - LK 4D4",
+    "DESCRIPTIONS": [
+      "When you play #y5 Attacks in a turn, apply #b1 #yWeak to ALL enemies."
+    ]
+  },
+  "TheKombatant:CoreSektorRelic": {
+    "NAME": "Core: Sektor",
+    "FLAVOR": "Core - LK 9T9",
+    "DESCRIPTIONS": [
+      "When you play #y5 Attacks in a turn, Deal #b3 damage to ALL enemies."
+    ]
+  },
+  "TheKombatant:CoreSmokeRelic": {
+    "NAME": "Core: Smoke",
+    "FLAVOR": "Core - LK 7T2",
+    "DESCRIPTIONS": [
+      "When you play #y5 Attacks in a turn, gain #b4 Block."
+    ]
+  },
+  "TheKombatant:BookofBoonRelic": {
+    "NAME": "The Book of Boon",
+    "FLAVOR": "Your Eyebrows feel Powerful",
+    "DESCRIPTIONS": [
+      "After playing #y25 Attacks, gain [E] [E] ."
+    ]
+  },
   "TheKombatant:ShinnoksAmuletRelic": {
     "NAME": "Shinnok's Amulet",
     "FLAVOR": "Dark Tidings from the Past and Future.",
     "DESCRIPTIONS": [
-      "At the end of your turn, Retain #b1 card. Retain a #b2nd Card if you have at least #b1 bar (33%) of #yMeter."
+      "At the end of your turn, Retain #b1 card. Retain a #b2nd Card if you have at least #b2 #yBars (66%) of #yMeter."
+    ]
+  },
+  "TheKombatant:Shinnoks2ndAmuletRelic": {
+    "NAME": "Shinnok's Amulet",
+    "FLAVOR": "Dark Tidings from the Past and Future.",
+    "DESCRIPTIONS": [
+      "At the end of your turn, Retain #b1 Kard for each unspent #yBar (33%) of #yMeter."
     ]
   },
   "TheKombatant:DefaultClickableRelic": {

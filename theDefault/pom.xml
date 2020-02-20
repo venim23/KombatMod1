@@ -6,8 +6,8 @@
     <groupId>Venim</groupId>
     <artifactId>KombatMod</artifactId>
     <name>The Kombatant</name>
-    <version>0.1.0</version>
-    <description>Mortal Kombat themed mod. Character Select Screen by Poser96 on Deviant Art. Still in beta.</description>
+    <version>0.4.0</version>
+    <description>Mortal Kombat themed mod. Character Select Screen by Poser96 on Deviant Art. Mortal Kombat is property of Netherrealm Studios. Still in beta.</description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

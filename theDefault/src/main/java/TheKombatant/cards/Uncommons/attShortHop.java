@@ -3,17 +3,14 @@ package TheKombatant.cards.Uncommons;
 import TheKombatant.Kombatmod;
 import TheKombatant.actions.MixupDamageAction;
 import TheKombatant.cards.AbstractDynamicKombatCard;
-import TheKombatant.characters.TheDefault;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.powers.DrunkenFistPower;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.FallingIceEffect;
-import com.megacrit.cardcrawl.vfx.combat.IceShatterEffect;
 
 import static TheKombatant.Kombatmod.makeCardPath;
 
@@ -40,12 +37,12 @@ public class attShortHop extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 1;
     private static final int DAMAGE = 6;
     private static final int CARDS = 2;
-    private static final int UPCARDS = 1;
+    private static final int UPDAMAGE = 3;
 
     //Stuff for Kombatant
     private static final boolean ComboCard = false;
@@ -90,8 +87,8 @@ public class attShortHop extends AbstractDynamicKombatCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPCARDS);
-            rawDescription = UPGRADE_DESCRIPTION;
+            upgradeDamage(UPDAMAGE);
+            //upgradeMagicNumber(UPCARDS);
             initializeDescription();
         }
     }

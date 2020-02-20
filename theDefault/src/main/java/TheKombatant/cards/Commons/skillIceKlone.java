@@ -4,7 +4,7 @@ import TheKombatant.Kombatmod;
 import TheKombatant.actions.SFXVAction;
 import TheKombatant.cards.AbstractDynamicKombatCard;
 import TheKombatant.cards.CardHeaders;
-import TheKombatant.characters.TheDefault;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.patches.CardTagEnum;
 import TheKombatant.powers.SpecialCancelPower;
 import TheKombatant.util.SoundEffects;
@@ -29,6 +29,8 @@ public class skillIceKlone extends AbstractDynamicKombatCard {
 
     public static final String ID = Kombatmod.makeID(skillIceKlone.class.getSimpleName());
     public static final String IMG = makeCardPath("skillIceKlone.png");
+    public static final String IMGALT = makeCardPath("skillIceKloneAlt.png");
+
 
     // /TEXT DECLARATION/
     private static final boolean ComboCard = false;
@@ -40,7 +42,7 @@ public class skillIceKlone extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 2;
     private static final int UPGRADE_REDUCED_COST = 1;
@@ -96,6 +98,8 @@ public class skillIceKlone extends AbstractDynamicKombatCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
+            loadCardImage(IMGALT);
+            this.textureImg = IMGALT;
             upgradeName();
             upgradeBaseCost(UPGRADE_REDUCED_COST);
             initializeDescription();

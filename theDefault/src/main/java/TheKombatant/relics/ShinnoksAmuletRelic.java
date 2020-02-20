@@ -65,7 +65,7 @@ public class ShinnoksAmuletRelic extends CustomRelic {
     @Override
     public void onPlayerEndTurn() {
         if (AbstractDungeon.player.hasPower(MeterPower.POWER_ID)){
-            if (AbstractDungeon.player.getPower(MeterPower.POWER_ID).amount >= 33){
+            if (AbstractDungeon.player.getPower(MeterPower.POWER_ID).amount >= 66){
                 if (RetainVal < 1){
                     AbstractDungeon.actionManager.addToTop((AbstractGameAction)new ApplyPowerAction((AbstractCreature)AbstractDungeon.player, (AbstractCreature)AbstractDungeon.player, (AbstractPower)new RetainCardPower((AbstractCreature)AbstractDungeon.player, 1), 1));
                     RetainVal++;

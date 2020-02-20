@@ -9,7 +9,7 @@
 },
         "TheKombatant:MeterPower": {
                 "NAME": "Special Meter",
-                "DESCRIPTIONS": ["Gain Meter by: NL Standard Attacks: #y8 NL Kombo Attacks: #y6 NL Non-enhanced Specials: #y6 NL Blocking an Attack #y5 NL Taking Damage: #y10. NL Current: #b", "% Full. NL #b", "/3 Bars"]
+                "DESCRIPTIONS": ["Currently #b","% full. NL Giving you #b", " #bBars of Meter (Max 3) NL Fill the Meter by: NL Standard Attacks: #y8% NL Kombo Attacks: #y6% NL Non-enhanced Specials: #y6% NL Blocking an Attack #y6% NL Taking Damage: #y8%."]
         },
         "TheKombatant:SpecialCancelPower": {
                 "NAME": "Special Cancel",
@@ -19,9 +19,13 @@
                 "NAME": "Toasty",
                 "DESCRIPTIONS": ["When attacked this turn, this creature takes #b", " Additional Damage."]
         },
+        "TheKombatant:TocixAirPower": {
+                "NAME": "Toxic Air",
+                "DESCRIPTIONS": ["At the start of your turn, apply #b", " #yPoison to a random enemy."]
+        },
         "TheKombatant:DarknessPower": {
                 "NAME": "Darkness",
-                "DESCRIPTIONS": ["This turn, #yRetain #b", " additional Kard.", " additional Kards."]
+                "DESCRIPTIONS": ["Currently granting #yRetain #b", ", Goes away next turn.", ", Goes away next turn."]
         },
         "TheKombatant:PosessedPower": {
                 "NAME": "Possessed",
@@ -87,7 +91,7 @@
                 "NAME": "Chained Damage Modifier",
                 "DESCRIPTIONS": [
                         "Due to using Extenders and Kombos, direct damage dealt is reduced by #b",
-                        "%. NL Until the end of your turn. Max #b80%"
+                        "% Until the end of your turn. NL Max #b100%"
                 ]
         }
 }

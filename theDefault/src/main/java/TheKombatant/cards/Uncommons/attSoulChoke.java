@@ -2,11 +2,10 @@ package TheKombatant.cards.Uncommons;
 
 import TheKombatant.Kombatmod;
 import TheKombatant.actions.EXEffectAction;
-import TheKombatant.actions.ExtenderAction;
 import TheKombatant.actions.SFXVAction;
 import TheKombatant.cards.AbstractDynamicKombatCard;
 import TheKombatant.cards.CardHeaders;
-import TheKombatant.characters.TheDefault;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.patches.CardTagEnum;
 import TheKombatant.powers.SpecialCancelPower;
 import TheKombatant.util.SoundEffects;
@@ -18,7 +17,6 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.FireballEffect;
 import com.megacrit.cardcrawl.vfx.combat.FlyingOrbEffect;
 
 import static TheKombatant.Kombatmod.makeCardPath;
@@ -34,7 +32,8 @@ public class attSoulChoke extends AbstractDynamicKombatCard {
     // TEXT DECLARATION
 
     public static final String ID = Kombatmod.makeID(attSoulChoke.class.getSimpleName());
-    public static final String IMG = makeCardPath("attSoulChoke.png");
+    public static final String IMG = makeCardPath("attSoulChoke1.png");
+    public static final String IMGALT = makeCardPath("attSoulChokeAlt.png");
 
     // /TEXT DECLARATION/
 
@@ -44,7 +43,7 @@ public class attSoulChoke extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 1;
     private static final int DAMAGE = 10;
@@ -116,6 +115,8 @@ public class attSoulChoke extends AbstractDynamicKombatCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
+            loadCardImage(IMGALT);
+            this.textureImg = IMGALT;
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
             initializeDescription();

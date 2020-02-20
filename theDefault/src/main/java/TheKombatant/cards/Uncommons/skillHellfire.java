@@ -4,7 +4,7 @@ import TheKombatant.Kombatmod;
 import TheKombatant.actions.SFXVAction;
 import TheKombatant.cards.AbstractDynamicKombatCard;
 import TheKombatant.cards.CardHeaders;
-import TheKombatant.characters.TheDefault;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.patches.CardTagEnum;
 import TheKombatant.powers.HellfirePower;
 import TheKombatant.powers.SpecialCancelPower;
@@ -32,6 +32,7 @@ public class skillHellfire extends AbstractDynamicKombatCard {
 
     public static final String ID = Kombatmod.makeID(skillHellfire.class.getSimpleName());
     public static final String IMG = makeCardPath("skillHellfire.png");
+    public static final String IMGALT = makeCardPath("skillHellfireAlt.png");
 
     // /TEXT DECLARATION/
 
@@ -41,7 +42,7 @@ public class skillHellfire extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 1;
     private static final int BLOCK = 8;
@@ -103,6 +104,8 @@ public class skillHellfire extends AbstractDynamicKombatCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
+            loadCardImage(IMGALT);
+            this.textureImg = IMGALT;
             upgradeName();
             upgradeBlock(UPGRADE_PLUS_BLOCK);
             initializeDescription();

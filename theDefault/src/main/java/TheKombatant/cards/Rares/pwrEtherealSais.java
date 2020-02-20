@@ -3,7 +3,7 @@ package TheKombatant.cards.Rares;
 import TheKombatant.Kombatmod;
 import TheKombatant.cards.AbstractDynamicKombatCard;
 import TheKombatant.cards.CardHeaders;
-import TheKombatant.characters.TheDefault;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.patches.CardTagEnum;
 import TheKombatant.powers.EtherealSaiPower;
 import TheKombatant.powers.SpecialCancelPower;
@@ -39,7 +39,7 @@ public class pwrEtherealSais extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 2;
     private static final int COSTUP = 1;

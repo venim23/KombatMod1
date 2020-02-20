@@ -1,5 +1,6 @@
 package TheKombatant.cards;
 
+import TheKombatant.characters.TheKombatant;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -7,7 +8,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import TheKombatant.Kombatmod;
-import TheKombatant.characters.TheDefault;
 import TheKombatant.powers.CommonPower;
 
 import static TheKombatant.Kombatmod.makeCardPath;
@@ -37,7 +37,7 @@ public class KombatCommonPower extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 1;
     private static final int MAGIC = 1;

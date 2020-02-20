@@ -1,6 +1,8 @@
 package TheKombatant.powers;
 
 import TheKombatant.Kombatmod;
+import TheKombatant.actions.SFXVAction;
+import TheKombatant.util.SoundEffects;
 import TheKombatant.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
@@ -51,6 +53,10 @@ public class ToastyPower extends AbstractPower implements CloneablePowerInterfac
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
         updateDescription();
+    }
+
+    public void onInitialApplication() {
+        AbstractDungeon.actionManager.addToBottom(new SFXVAction(SoundEffects.toasty.getKey(), 1.3F));
     }
 
     public void stackPower(int stackAmount) {

@@ -2,7 +2,7 @@ package TheKombatant.cards.Rares;
 
 import TheKombatant.Kombatmod;
 import TheKombatant.cards.AbstractDynamicKombatCard;
-import TheKombatant.characters.TheDefault;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.util.SoundEffects;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -40,10 +40,10 @@ public class attYouSuck extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 20;
+    private static final int DAMAGE = 25;
     private static final int HPLOSS = 5;
     private static final int UPGRADE_PLUS_HPLOSS = 3;
 

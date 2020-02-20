@@ -6,13 +6,12 @@ import TheKombatant.actions.EXEffectAction;
 import TheKombatant.actions.SFXVAction;
 import TheKombatant.cards.AbstractDynamicKombatCard;
 import TheKombatant.cards.CardHeaders;
-import TheKombatant.characters.TheDefault;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.patches.CardTagEnum;
 import TheKombatant.powers.SpecialCancelPower;
 import TheKombatant.util.SoundEffects;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -31,6 +30,7 @@ public class attIceSlide extends AbstractDynamicKombatCard {
 
     public static final String ID = Kombatmod.makeID(attIceSlide.class.getSimpleName());
     public static final String IMG = makeCardPath("attIceSlide.png");
+    public static final String IMGALT = makeCardPath("attIceSlideAlt.png");
 
     // /TEXT DECLARATION/
 
@@ -40,11 +40,11 @@ public class attIceSlide extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 1;
     private static final int DAMAGE = 8;
-    private static final int CHILL= 3;
+    private static final int CHILL= 2;
     private static final int UPGRADE_PLUS_CHILL = 2;
     private boolean CostModded = false;
 
@@ -93,7 +93,7 @@ public class attIceSlide extends AbstractDynamicKombatCard {
                 this.costForTurn = this.cost - 1;
                 CostModded = true;
             }
-        } else if (CostModded = true){
+        } else if (CostModded){
             this.costForTurn = this.cost;
             CostModded = false;
         }
@@ -105,6 +105,8 @@ public class attIceSlide extends AbstractDynamicKombatCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
+            loadCardImage(IMGALT);
+            this.textureImg = IMGALT;
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_CHILL);
             initializeDescription();

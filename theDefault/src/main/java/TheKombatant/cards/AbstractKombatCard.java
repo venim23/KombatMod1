@@ -53,8 +53,6 @@ public abstract class AbstractKombatCard extends CustomCard {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
 
         // Set all the things to their default values.
-        isCostModified = false;
-        isCostModifiedForTurn = false;
         isDamageModified = false;
         isBlockModified = false;
         isMagicNumberModified = false;
@@ -77,8 +75,6 @@ public abstract class AbstractKombatCard extends CustomCard {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
 
         // Set all the things to their default values.
-        isCostModified = false;
-        isCostModifiedForTurn = false;
         isDamageModified = false;
         isBlockModified = false;
         isMagicNumberModified = false;
@@ -116,6 +112,7 @@ public abstract class AbstractKombatCard extends CustomCard {
         return canUse;
     }
 */
+    @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m)
     {
         if (this.isComboCard) {
@@ -129,11 +126,11 @@ public abstract class AbstractKombatCard extends CustomCard {
 
                 }
                 else {
-                    this.cantUseMessage = "THAT'S NOT HOW COMBO CARDS WORK, READ THE KEYWORD CLOSER.";
+                    this.cantUseMessage = "THAT'S NOT HOW KOMBO KARDS WORK, READ THE KEYWORD KLOSER.";
                             //AbstractKombatCard.CAN_USE_TEXT[0];
                 }
             } else {
-                this.cantUseMessage = "YOU THOUGHT YOU COULD START WITH A COMBO CARD?";
+                this.cantUseMessage = "YOU THOUGHT YOU KOULD START WITH A KOMBO KARD?";
             }
             return canUse && this.cardPlayable(m) && this.hasEnoughEnergy();
 
@@ -221,7 +218,7 @@ public abstract class AbstractKombatCard extends CustomCard {
                 else
                 {*/
                 FontHelper.cardTitleFont.getData().setScale(this.drawScale * 0.9F);
-                Color textColor = Color.SLATE.cpy();
+                Color textColor = Color.GOLD.cpy();
                 //textColor = Settings.CREAM_COLOR.cpy();
                 //}
 

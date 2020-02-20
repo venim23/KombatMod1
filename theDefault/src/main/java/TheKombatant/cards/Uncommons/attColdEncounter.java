@@ -3,7 +3,7 @@ package TheKombatant.cards.Uncommons;
 import TheKombatant.Kombatmod;
 import TheKombatant.actions.SFXVAction;
 import TheKombatant.cards.AbstractDynamicKombatCard;
-import TheKombatant.characters.TheDefault;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.patches.CardTagEnum;
 import TheKombatant.powers.ChilledPower;
 import TheKombatant.util.SoundEffects;
@@ -44,11 +44,12 @@ public class attColdEncounter extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 11;
-    private static final int CHILLED = 3;
+    private static final int DAMAGE = 9;
+    private static final int DAMAGEUP = 1;
+    private static final int CHILLED = 2;
 
     //Stuff for Kombatant
     private static final boolean ComboCard = true;
@@ -91,6 +92,7 @@ public class attColdEncounter extends AbstractDynamicKombatCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeDamage(DAMAGEUP);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

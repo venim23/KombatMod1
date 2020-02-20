@@ -3,7 +3,7 @@ package TheKombatant.cards.Rares;
 import TheKombatant.Kombatmod;
 import TheKombatant.actions.SFXVAction;
 import TheKombatant.cards.AbstractDynamicKombatCard;
-import TheKombatant.characters.TheDefault;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.powers.InvisiblePower;
 import TheKombatant.util.SoundEffects;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -36,7 +36,7 @@ public class skillStealth extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 3;
     private static final int UPCOST = 2;

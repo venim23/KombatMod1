@@ -3,7 +3,7 @@ package TheKombatant.cards.Rares;
 import TheKombatant.Kombatmod;
 import TheKombatant.cards.AbstractDynamicKombatCard;
 import TheKombatant.cards.CardHeaders;
-import TheKombatant.characters.TheDefault;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.patches.CardTagEnum;
 import TheKombatant.powers.SpecialCancelPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -30,6 +30,8 @@ public class attCurse extends AbstractDynamicKombatCard {
 
     public static final String ID = Kombatmod.makeID(attCurse.class.getSimpleName());
     public static final String IMG = makeCardPath("attCurse.png");
+    public static final String IMGALT = makeCardPath("attCurseAlt.png");
+
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
@@ -41,7 +43,7 @@ public class attCurse extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 1;
     private static final int CHAINVALUE = 20;
@@ -113,6 +115,8 @@ public class attCurse extends AbstractDynamicKombatCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
+            loadCardImage(IMGALT);
+            this.textureImg = IMGALT;
             upgradeName();
             upgradeDamage(DAMAGEUP);
             initializeDescription();

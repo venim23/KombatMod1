@@ -6,6 +6,7 @@ import org.apache.logging.log4j.core.jmx.RingBufferAdmin;
 import static TheKombatant.Kombatmod.makeAudioPath;
 
 public class SoundEffects {
+    public static final Pair<String, String> toasty = new Pair<>("Kombatmod:toasty", makeAudioPath("toasty.ogg"));
     public static final Pair<String, String> Spear = new Pair<>("Kombatmod:Spear", makeAudioPath("getoverhere.ogg"));
     public static final Pair<String, String> Fight = new Pair<>("Kombatmod:Fight", makeAudioPath("fight.ogg"));
     public static final Pair<String, String> Fatality = new Pair<>("Kombatmod:Fatality", makeAudioPath("fatality.ogg"));

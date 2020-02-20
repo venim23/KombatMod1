@@ -3,15 +3,8 @@ package TheKombatant.cards.Rares;
 import TheKombatant.Kombatmod;
 import TheKombatant.actions.MixupDamageAction;
 import TheKombatant.cards.AbstractDynamicKombatCard;
-import TheKombatant.cards.CardHeaders;
-import TheKombatant.characters.TheDefault;
-import TheKombatant.patches.CardTagEnum;
+import TheKombatant.characters.TheKombatant;
 import TheKombatant.powers.DrunkenFistPower;
-import TheKombatant.powers.SpecialCancelPower;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.unique.DamagePerAttackPlayedAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -43,7 +36,7 @@ public class attQuickDraw extends AbstractDynamicKombatCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_SLATE;
+    public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 0;
     private static final int CHAINVALUE = 0;
