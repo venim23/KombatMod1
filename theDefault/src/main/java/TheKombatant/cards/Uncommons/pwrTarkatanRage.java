@@ -39,7 +39,7 @@ public class pwrTarkatanRage extends AbstractDynamicKombatCard {
     public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 1;
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 2;
     private static final int UPCOST = 0;
 
     // /STAT DECLARATION/

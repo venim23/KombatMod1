@@ -1,0 +1,258 @@
+
+ShaoKahn.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+idle01
+  rotate: false
+  xy: 367, 265
+  size: 67, 156
+  orig: 67, 156
+  offset: 0, 0
+  index: -1
+idle02
+  rotate: false
+  xy: 427, 614
+  size: 70, 156
+  orig: 70, 156
+  offset: 0, 0
+  index: -1
+idle03
+  rotate: false
+  xy: 354, 614
+  size: 71, 155
+  orig: 71, 155
+  offset: 0, 0
+  index: -1
+idle04
+  rotate: false
+  xy: 278, 704
+  size: 74, 157
+  orig: 74, 157
+  offset: 0, 0
+  index: -1
+idle05
+  rotate: false
+  xy: 278, 863
+  size: 73, 157
+  orig: 73, 157
+  offset: 0, 0
+  index: -1
+idle06
+  rotate: false
+  xy: 294, 298
+  size: 71, 157
+  orig: 71, 157
+  offset: 0, 0
+  index: -1
+idle07
+  rotate: false
+  xy: 499, 574
+  size: 64, 157
+  orig: 64, 157
+  offset: 0, 0
+  index: -1
+hitl01
+  rotate: false
+  xy: 462, 1
+  size: 62, 153
+  orig: 62, 153
+  offset: 0, 0
+  index: -1
+hitl02
+  rotate: false
+  xy: 505, 156
+  size: 62, 153
+  orig: 62, 153
+  offset: 0, 0
+  index: -1
+hitl03
+  rotate: false
+  xy: 526, 1
+  size: 62, 152
+  orig: 62, 152
+  offset: 0, 0
+  index: -1
+Laugh101
+  rotate: false
+  xy: 430, 772
+  size: 68, 159
+  orig: 68, 159
+  offset: 0, 0
+  index: -1
+Laugh102
+  rotate: false
+  xy: 436, 265
+  size: 67, 155
+  orig: 68, 155
+  offset: 0, 0
+  index: -1
+Laugh103
+  rotate: false
+  xy: 442, 422
+  size: 68, 150
+  orig: 68, 150
+  offset: 0, 0
+  index: -1
+Kick01
+  rotate: false
+  xy: 294, 457
+  size: 71, 155
+  orig: 71, 155
+  offset: 0, 0
+  index: -1
+kick02
+  rotate: false
+  xy: 512, 311
+  size: 56, 155
+  orig: 56, 155
+  offset: 0, 0
+  index: -1
+kick03
+  rotate: false
+  xy: 367, 423
+  size: 67, 155
+  orig: 67, 155
+  offset: 0, 0
+  index: -1
+kick04
+  rotate: false
+  xy: 195, 779
+  size: 81, 155
+  orig: 81, 155
+  offset: 0, 0
+  index: -1
+kick05
+  rotate: false
+  xy: 165, 1
+  size: 120, 148
+  orig: 120, 148
+  offset: 0, 0
+  index: -1
+spear601
+  rotate: false
+  xy: 129, 284
+  size: 114, 126
+  orig: 114, 126
+  offset: 0, 0
+  index: -1
+spear602
+  rotate: false
+  xy: 377, 1
+  size: 83, 128
+  orig: 83, 128
+  offset: 0, 0
+  index: -1
+spear603
+  rotate: false
+  xy: 354, 134
+  size: 86, 129
+  orig: 86, 129
+  offset: 0, 0
+  index: -1
+spear604
+  rotate: false
+  xy: 96, 151
+  size: 119, 131
+  orig: 119, 131
+  offset: 0, 0
+  index: -1
+shoulder401
+  rotate: false
+  xy: 353, 863
+  size: 75, 152
+  orig: 75, 152
+  offset: 0, 0
+  index: -1
+shoulder402
+  rotate: false
+  xy: 200, 552
+  size: 79, 150
+  orig: 79, 150
+  offset: 0, 0
+  index: -1
+shoulder403
+  rotate: false
+  xy: 195, 412
+  size: 97, 138
+  orig: 97, 138
+  offset: 0, 0
+  index: -1
+shoulder404
+  rotate: false
+  xy: 1, 327
+  size: 126, 136
+  orig: 126, 136
+  offset: 0, 0
+  index: -1
+hammer301
+  rotate: false
+  xy: 95, 465
+  size: 98, 156
+  orig: 98, 156
+  offset: 0, 0
+  index: -1
+hammer302
+  rotate: false
+  xy: 1, 645
+  size: 107, 145
+  orig: 107, 145
+  offset: 0, 0
+  index: -1
+hammer303
+  rotate: false
+  xy: 110, 623
+  size: 88, 154
+  orig: 88, 154
+  offset: 0, 0
+  index: -1
+hammer304
+  rotate: false
+  xy: 1, 465
+  size: 92, 178
+  orig: 92, 178
+  offset: 0, 0
+  index: -1
+hammer305
+  rotate: false
+  xy: 1, 141
+  size: 93, 184
+  orig: 93, 184
+  offset: 0, 0
+  index: -1
+hammer306
+  rotate: false
+  xy: 1, 1
+  size: 162, 138
+  orig: 162, 138
+  offset: 0, 0
+  index: -1
+blast701
+  rotate: false
+  xy: 98, 792
+  size: 95, 148
+  orig: 95, 148
+  offset: 0, 0
+  index: -1
+blast702
+  rotate: false
+  xy: 1, 792
+  size: 95, 149
+  orig: 95, 150
+  offset: 0, 0
+  index: -1
+blast703
+  rotate: false
+  xy: 245, 151
+  size: 90, 145
+  orig: 90, 145
+  offset: 0, 0
+  index: -1
+blast704
+  rotate: false
+  xy: 287, 1
+  size: 88, 131
+  orig: 88, 131
+  offset: 0, 0
+  index: -1

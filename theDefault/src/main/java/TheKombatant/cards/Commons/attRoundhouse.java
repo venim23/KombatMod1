@@ -41,8 +41,9 @@ public class attRoundhouse extends AbstractDynamicKombatCard {
 
     private static final int COST = 1;
     private static final int DAMAGE = 6;
+    private static final int DAMAGEUP = 2;
     private static final int MAG = 2;
-    private static final int UPGRADE_PLUS_MAG = 1;
+    private static final int UPGRADE_PLUS_MAG = 2;
 
     //Stuff for Kombatant
     private static final boolean ComboCard = false;
@@ -93,6 +94,7 @@ public class attRoundhouse extends AbstractDynamicKombatCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_MAG);
+            upgradeDamage(DAMAGEUP);
             initializeDescription();
         }
     }

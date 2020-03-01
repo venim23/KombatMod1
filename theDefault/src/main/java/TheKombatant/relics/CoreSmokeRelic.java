@@ -24,7 +24,7 @@ public class CoreSmokeRelic extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("smoke_relic.png"));
 
     private static final int COUNT = 5;
-    private static final int BLOCK = 4;
+    private static final int BLOCK = 6;
 
     public CoreSmokeRelic() {
         super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.HEAVY);

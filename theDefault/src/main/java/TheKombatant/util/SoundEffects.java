@@ -68,6 +68,15 @@ public class SoundEffects {
     public static final Pair<String, String> raidRapid2 = new Pair<>("Kombatmod:raidRapid2", makeAudioPath("raidRapid2.ogg"));
     public static final Pair<String, String> raidRapidBig = new Pair<>("Kombatmod:raidRapidBig", makeAudioPath("raidRapidBig.ogg"));
 
+    public static final Pair<String, String> SKexcellent = new Pair<>("Kombatmod:SKexcellent", makeAudioPath("SKexcellent.ogg"));
+    public static final Pair<String, String> SKsuck = new Pair<>("Kombatmod:SKsuck", makeAudioPath("SKsuck.ogg"));
+    public static final Pair<String, String> SKlaugh = new Pair<>("Kombatmod:SKlaugh", makeAudioPath("SKlaugh.ogg"));
+    public static final Pair<String, String> SKwin = new Pair<>("Kombatmod:SKwin", makeAudioPath("SKwin.ogg"));
+    public static final Pair<String, String> Skscream = new Pair<>("Kombatmod:SKscream", makeAudioPath("SKscream.ogg"));
+    public static final Pair<String, String> SKhammer = new Pair<>("Kombatmod:SKhammer", makeAudioPath("SKhammer.ogg"));
+    public static final Pair<String, String> SKhit = new Pair<>("Kombatmod:SKhit", makeAudioPath("SKhit.ogg"));
+    public static final Pair<String, String> SKpathetic = new Pair<>("Kombatmod:SKpathetic", makeAudioPath("SKpathetic.ogg"));
+    public static final Pair<String, String> SKtrying = new Pair<>("Kombatmod:SKtrying", makeAudioPath("SKtrying.ogg"));
 
 
 

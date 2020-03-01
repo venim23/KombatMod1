@@ -27,7 +27,7 @@ public class CoreCyraxRelic extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("cyrax_relic.png"));
 
     private static final int COUNT = 5;
-    private static final int WEAK = 1;
+    private static final int WEAK = 2;
 
     public CoreCyraxRelic() {
         super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.HEAVY);

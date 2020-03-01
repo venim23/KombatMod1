@@ -48,7 +48,7 @@ public class attFlyingThundergod extends AbstractDynamicKombatCard {
     public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 3;
-    private static final int DAMAGE = 36;
+    private static final int DAMAGE = 27;
     private static final int UPDAMAGE = 9;
     private boolean CostModded = false;
 

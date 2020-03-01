@@ -12,6 +12,8 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
 
+import java.util.*;
+
 @SpirePatch(
         clz= SingleCardViewPopup.class,
         method="renderTitle"
@@ -19,23 +21,33 @@ import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
 
 public class CardHeaderSingleView {
     @SpireInsertPatch(
-            rloc = 1,
+            rloc = 0,
             localvars={"card"}
     )
-    public static void Insert(SingleCardViewPopup __instance, SpriteBatch sb, AbstractCard card)
-    {
-        CardHeader cHeader;
-        String headerplswork;
-
+    public static void Insert(final SingleCardViewPopup __instance, final SpriteBatch sb, final AbstractCard card) {
         if (card instanceof AbstractKombatCard){
             if ((((AbstractKombatCard) card).HasCardHeader(card))){
-                cHeader = ((AbstractKombatCard) card).GetCardHeader();
-                headerplswork = cHeader.NAME;
-                FontHelper.renderFontCentered(sb, FontHelper.SCP_cardTitleFont_small, headerplswork, (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F + 400.0F * Settings.scale, Color.GOLD );
-
-            }
-
+        if (card != null && !card.isFlipped) {
+            ((AbstractKombatCard) card).renderInSingleCardPopup(sb);
         }
-
+            }
+        }
     }
 }
+
+
+/*
+    in  private void updateUpgradePreview() {
+    
+    private void loadPortraitImg() {
+        if (Settings.PLAYTESTER_ART_MODE || UnlockTracker.betaCardPref.getBoolean(this.card.cardID, false)) {
+            this.portraitImg = ImageMaster.loadImage("images/1024PortraitsBeta/" + this.card.assetUrl + ".png");
+        }
+        else {
+            this.portraitImg = ImageMaster.loadImage("images/1024Portraits/" + this.card.assetUrl + ".png");
+            if (this.portraitImg == null) {
+                this.portraitImg = ImageMaster.loadImage("images/1024PortraitsBeta/" + this.card.assetUrl + ".png");
+            }
+        }
+    }
+ */

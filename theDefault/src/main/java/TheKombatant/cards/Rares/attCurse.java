@@ -47,7 +47,7 @@ public class attCurse extends AbstractDynamicKombatCard {
 
     private static final int COST = 1;
     private static final int CHAINVALUE = 20;
-    private static final int DAMAGE = 4;
+    private static final int DAMAGE = 5;
     private static final int DAMAGEUP = 2;
     private int ATTACKS = 0;
     private boolean CostModded = false;

@@ -1,6 +1,7 @@
 package TheKombatant.cards.Rares;
 
 import TheKombatant.Kombatmod;
+import TheKombatant.actions.ExtenderAction;
 import TheKombatant.cards.AbstractDynamicKombatCard;
 import TheKombatant.characters.TheKombatant;
 import TheKombatant.powers.ChainedPower;
@@ -57,6 +58,8 @@ public class skillRestand extends AbstractDynamicKombatCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+
+        AbstractDungeon.actionManager.addToTop(new ExtenderAction(p));
 
         if (p.hasPower(ChainedPower.POWER_ID)){
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p,p,ChainedPower.POWER_ID));

@@ -44,7 +44,7 @@ public class attCertainDeath extends AbstractDynamicKombatCard {
     public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 0;
-    private static final int DAMAGE = 10;
+    private static final int DAMAGE = 12;
     private static final int UPGRADE_PLUS_DMG = 4;
     private static final int CARDS = 2;
     private static final int CARDSUP = -1;

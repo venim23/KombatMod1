@@ -47,10 +47,10 @@ public class attAcidSpit extends AbstractDynamicKombatCard {
 
     private static final int COST = 1;
     private static final int CHAINVALUE = 20;
-    private static final int DAMAGE = 6;
-    private static final int POISON = 2;
+    private static final int DAMAGE = 5;
+    private static final int POISON = 3;
     private static final int UPGRADE_PLUS_DMG = 2;
-    private static final int UPGRADE_PLUS_POISON = 1;
+    private static final int UPGRADE_PLUS_POISON = 2;
     private boolean CostModded = false;
 
     //Stuff for Kombatant

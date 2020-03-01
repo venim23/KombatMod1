@@ -27,7 +27,7 @@ public class CoreSektorRelic extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("sektor_relic.png"));
 
     private static final int COUNT = 5;
-    private static final int DMG = 3;
+    private static final int DMG = 5;
 
     public CoreSektorRelic() {
         super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.HEAVY);

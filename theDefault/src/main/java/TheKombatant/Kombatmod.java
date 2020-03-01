@@ -4,6 +4,7 @@ import TheKombatant.cards.Commons.*;
 import TheKombatant.cards.Rares.*;
 import TheKombatant.cards.Uncommons.*;
 import TheKombatant.characters.TheKombatant;
+import TheKombatant.monsters.bossShaoKahn;
 import TheKombatant.relics.*;
 import TheKombatant.util.SoundEffects;
 import basemod.BaseMod;
@@ -20,6 +21,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
@@ -166,6 +168,9 @@ public class Kombatmod implements
     }
     public static String makeAudioPath(String resourcePath) {
         return getModID() + "Resources/audio/sounds/" + resourcePath;
+    }
+    public static String makeMonsterPath(String resourcePath) {
+        return getModID() + "Resources/images/monsters/" + resourcePath;
     }
 
     
@@ -341,7 +346,7 @@ public class Kombatmod implements
 
         
         // =============== EVENTS =================
-        
+        receiveEditMonsters();
         // This event will be exclusive to the City (act 2). If you want an event that's present at any
         // part of the game, simply don't include the dungeon ID
         // If you want to have a character-specific event, look at slimebound (CityRemoveEventPatch).
@@ -350,6 +355,13 @@ public class Kombatmod implements
         
         // =============== /EVENTS/ =================
         logger.info("Done loading badge Image and mod options");
+    }
+
+    public void receiveEditMonsters(){
+        BaseMod.addMonster(bossShaoKahn.ID, () -> new bossShaoKahn());
+        logger.info("Bosses Loaded");
+        //BaseMod.addBoss(TheBeyond.ID, bossShaoKahn.ID, "TheKombatantResources/images/ui/map/ShaoKahnIcon.png", "TheKombatantResources/images/ui/map/bossIcon-outline.png");
+
     }
     
     // =============== / POST-INITIALIZE/ =================
@@ -416,6 +428,16 @@ public class Kombatmod implements
         addAudio(SoundEffects.raidPort);
         addAudio(SoundEffects.raidRapid2);
         addAudio(SoundEffects.raidRapidBig);
+        //SK
+        addAudio(SoundEffects.SKexcellent);
+        addAudio(SoundEffects.SKhammer);
+        addAudio(SoundEffects.SKhit);
+        addAudio(SoundEffects.SKlaugh);
+        addAudio(SoundEffects.SKpathetic);
+        addAudio(SoundEffects.SKsuck);
+        addAudio(SoundEffects.SKtrying);
+        addAudio(SoundEffects.SKwin);
+        addAudio(SoundEffects.Skscream);
 
     }
 
@@ -533,6 +555,7 @@ public class Kombatmod implements
         BaseMod.addCard(new attHighStrike_s());
         BaseMod.addCard(new attYouSuck());
         BaseMod.addCard(new attFaceEater());
+
         BaseMod.addCard(new pwrSmokescreen());
         BaseMod.addCard(new pwrSecretShang());
         BaseMod.addCard(new pwrHatTricks());
@@ -541,6 +564,7 @@ public class Kombatmod implements
         BaseMod.addCard(new pwrMeatandGreet());
         BaseMod.addCard(new pwrEtherealSais());
         BaseMod.addCard(new pwrTarkatanRage());
+        BaseMod.addCard(new pwrElderGodsCouncil());
         BaseMod.addCard(new skillSpear());
         BaseMod.addCard(new skillStealth());
         BaseMod.addCard(new skillCyberInitiative());
@@ -605,7 +629,7 @@ public class Kombatmod implements
         UnlockTracker.unlockCard(attCurse.ID);
         UnlockTracker.unlockCard(attTouchofRain.ID);
         UnlockTracker.unlockCard(attFatality.ID);
-        UnlockTracker.unlockCard(attFaceEater.ID);
+        //UnlockTracker.unlockCard(attFaceEater.ID);
         UnlockTracker.unlockCard(attFlyingThundergod.ID);
         UnlockTracker.unlockCard(attTeleslam.ID);
         //UnlockTracker.unlockCard(attYouSuck.ID);
@@ -663,10 +687,10 @@ public class Kombatmod implements
 
 
     public void receiveSetUnlocks() {
-        BaseMod.addUnlockBundle(new CustomUnlockBundle(attYouSuck.ID, attBicycleKick.ID, pwrTarkatanRage.ID), TheKombatant.Enums.THE_KOMBATANT, 0);
+        BaseMod.addUnlockBundle(new CustomUnlockBundle(attYouSuck.ID, attBicycleKick.ID, attFaceEater.ID), TheKombatant.Enums.THE_KOMBATANT, 0);
         UnlockTracker.addCard(attYouSuck.ID);
         UnlockTracker.addCard(attBicycleKick.ID);
-        UnlockTracker.addCard(pwrTarkatanRage.ID);
+        UnlockTracker.addCard(attFaceEater.ID);
         BaseMod.addUnlockBundle(new CustomUnlockBundle(AbstractUnlock.UnlockType.RELIC, JinseiRelic.ID, BookofBoonRelic.ID, TasteofSaltRelic.ID), TheKombatant.Enums.THE_KOMBATANT, 1);
         UnlockTracker.addRelic(JinseiRelic.ID);
         UnlockTracker.addRelic(BookofBoonRelic.ID);
@@ -679,12 +703,12 @@ public class Kombatmod implements
         UnlockTracker.addRelic(CoreCyraxRelic.ID);
         UnlockTracker.addRelic(CoreSektorRelic.ID);
         UnlockTracker.addRelic(CoreSmokeRelic.ID);
-        /*
-        BaseMod.addUnlockBundle(new CustomUnlockBundle(skillPaleKingsBlessing.ID, powerWhiteLadysBlessing.ID, skillRadiancesLament.ID), TheBugKnight.Enums.THE_BUGKNIGHT, 4);
-        UnlockTracker.addCard(skillPaleKingsBlessing.ID);
-        UnlockTracker.addCard(powerWhiteLadysBlessing.ID);
-        UnlockTracker.addCard(skillRadiancesLament.ID);
-    */
+        BaseMod.addUnlockBundle(new CustomUnlockBundle(pwrElderGodsCouncil.ID, pwrElderGodsCouncil.ID, pwrElderGodsCouncil.ID), TheKombatant.Enums.THE_KOMBATANT, 4);
+        UnlockTracker.addCard(pwrElderGodsCouncil.ID);
+        UnlockTracker.addCard(pwrElderGodsCouncil.ID);
+        UnlockTracker.addCard(pwrElderGodsCouncil.ID);
+
+
 
     }
     
@@ -725,7 +749,9 @@ public class Kombatmod implements
         // CharacterStrings
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
                 getModID() + "Resources/localization/eng/theKombatant-Character-Strings.json");
-        
+        // Monster Strings
+        BaseMod.loadCustomStringsFile(MonsterStrings.class,
+                getModID() + "Resources/localization/eng/theKombatant-Monster-Strings.json");
         // OrbStrings
         BaseMod.loadCustomStringsFile(OrbStrings.class,
                 getModID() + "Resources/localization/eng/theKombatant-Orb-Strings.json");

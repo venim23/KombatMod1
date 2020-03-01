@@ -45,7 +45,7 @@ public class attAcidSlide extends AbstractDynamicKombatCard {
 
     private static final int COST = 2;
     private static final int UPCOST = 1;
-    private static final int DAMAGE = 8;
+    private static final int DAMAGE = 9;
     private static final int POISON = 4;
     private static final int UPGRADE_PLUS_DMG = 6;
     private static final int ENERGYUP = 1;

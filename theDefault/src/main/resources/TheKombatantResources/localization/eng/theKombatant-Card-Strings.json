@@ -40,11 +40,11 @@
   },
   "TheKombatant:attFlamePort": {
     "NAME": "Flame Port",
-    "DESCRIPTION": "Deal !D! thekombatant:Mixup damage. Apply !M! thekombatant:Toasty. thekombatant:Extender. Exhaust. NL thekombatant:EX: This kard isn't Exhausted."
+    "DESCRIPTION": "Apply !M! thekombatant:Toasty and deal !D! damage to ALL Enemies. NL thekombatant:Extender. Exhaust. NL thekombatant:EX: This kard isn't Exhausted."
   },
   "TheKombatant:attRoundhouse": {
     "NAME": "Roundhouse",
-    "DESCRIPTION": "Deal !D! damage. NL Add 1 Roundhouse from your draw pile to your hand. NL It's damage is increased by !M! for this combat."
+    "DESCRIPTION": "Deal !D! damage. NL Put 1 Roundhouse from your draw pile to your hand. NL It's damage is increased by !M! for this combat."
   },
   "TheKombatant:attWeWin": {
     "NAME": "We Win",
@@ -217,6 +217,11 @@
   "DESCRIPTION": "Ethereal NL Using thekombatant:Extender draws 1 additional kard.",
   "UPGRADE_DESCRIPTION": "Using thekombatant:Extender draws 1 additional kard."
 },
+  "TheKombatant:pwrElderGodsCouncil": {
+    "NAME": "Consult Elder Gods",
+    "DESCRIPTION": "At the start of your turn, draw !M! additional kard, Gain 10% Meter, Refund the cost of the first !M! Kard played.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, draw !M! additional kards, Gain 20% Meter, Refund the cost of the first !M! Kards played."
+  },
   "TheKombatant:skillGuard_s": {
     "NAME": "Guard",
     "DESCRIPTION": "Gain !B! Block."
@@ -224,7 +229,7 @@
   "TheKombatant:skillDarkness": {
     "NAME": "Darkness",
     "DESCRIPTION": "thekombatant:Kombo NL Gain !B! Block. Draw !M! kard.",
-    "UPGRADE_DESCRIPTION": "thekombatant:Kombo NL Gain !B! Block. Draw !M! kard. NL Retain 1 kard this turn."
+    "UPGRADE_DESCRIPTION": "thekombatant:Kombo NL Gain !B! Block. NL Shuffle a kard from your Discard into your Draw Pile. Draw !M! kard. "
   },
   "TheKombatant:skillKenshisSpirits": {
     "NAME": "Kenshi's Spirits",
@@ -233,7 +238,7 @@
   },
   "TheKombatant:skillIceKlone": {
     "NAME": "Ice Klone",
-    "DESCRIPTION": "Gain !B! Block. Next turn gain [E]. Exhaust."
+    "DESCRIPTION": "Gain !B! Block. Next turn gain [E]. NL Exhaust."
   },
   "TheKombatant:skillEnenra": {
     "NAME": "Enenra",
@@ -305,13 +310,13 @@
   },
   "TheKombatant:skillRestand": {
     "NAME": "Restand",
-    "DESCRIPTION": "Remove any Chained Power. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Remove any Chained Power. Remove any Weak and Frail as well. Exhaust."
+    "DESCRIPTION": "thekombatant:Extender. NL Remove any Chained Power. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Remove any Chained Power. Remove any Weak and Frail as well. NL Exhaust."
   },
   "TheKombatant:skillRunCancel": {
     "NAME": "Run Kancel",
-    "DESCRIPTION": "thekombatant:Kombo NL thekombatant:Extender. Exhaust",
-    "UPGRADE_DESCRIPTION": "thekombatant:Kombo NL thekombatant:Extender. You may play another thekombatant:Kombo. Exhaust"
+    "DESCRIPTION": "thekombatant:Kombo NL thekombatant:Extender. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "thekombatant:Kombo NL thekombatant:Extender. You may play another thekombatant:Kombo. NL Exhaust."
   },
   "TheKombatant:skillLowParry": {
     "NAME": "Low Parry",

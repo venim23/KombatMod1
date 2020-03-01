@@ -1,21 +1,20 @@
 package TheKombatant.cards.Commons;
 
 import TheKombatant.Kombatmod;
-import TheKombatant.actions.ExtenderAction;
-import TheKombatant.actions.MixupDamageAction;
-import TheKombatant.actions.SFXVAction;
+import TheKombatant.actions.*;
 import TheKombatant.cards.AbstractDynamicKombatCard;
 import TheKombatant.cards.CardHeaders;
 import TheKombatant.characters.TheKombatant;
 import TheKombatant.patches.CardTagEnum;
-import TheKombatant.powers.DrunkenFistPower;
-import TheKombatant.powers.MeterPower;
-import TheKombatant.powers.SpecialCancelPower;
-import TheKombatant.powers.ToastyPower;
+import TheKombatant.powers.*;
 import TheKombatant.util.SoundEffects;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -49,10 +48,9 @@ public class attFlamePort extends AbstractDynamicKombatCard {
     public static final CardColor COLOR = TheKombatant.Enums.COLOR_SLATE;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 8;
-    private static final int UPGRADE_PLUS_DMG = 2;
+    private static final int DAMAGE = 6;
     private static final int TOASTY = 2;
-    private static final int UPGRADE_PLUS_TOASTY = 1;
+    private static final int UPGRADE_PLUS_TOASTY = 2;
     private boolean CostModded = false;
 
     //Stuff for Kombatant
@@ -67,6 +65,7 @@ public class attFlamePort extends AbstractDynamicKombatCard {
     public attFlamePort() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET, ComboCard, SpecialCard, EnhancedEffect);
         baseDamage = DAMAGE;
+        this.isMultiDamage = true;
         magicNumber = baseMagicNumber = TOASTY;
         this.SetCardHeader(CardHeaders.Special);
         tags.add(CardTagEnum.SPECIAL);
@@ -83,9 +82,18 @@ public class attFlamePort extends AbstractDynamicKombatCard {
         AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new GhostlyFireEffect(m.hb.cX , m.hb.cY), 0.2F));
 
         AbstractDungeon.actionManager.addToBottom(
-                new MixupDamageAction(p, m, damage));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p,new ToastyPower(m,p,magicNumber),magicNumber));
+                new DamageAllEnemiesAction(p,multiDamage,damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
+
+        for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
+            if ((!monster.isDead) && (!monster.isDying)) {
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster,p,new ToastyPower(m,p,magicNumber),magicNumber));
+
+            }
+        }
+
         AbstractDungeon.actionManager.addToBottom(new ExtenderAction(p));
+
+        AbstractDungeon.actionManager.addToBottom(new EXEffectAction(new PreserveAction(p, this)));
         if (AbstractDungeon.player.hasPower(MeterPower.POWER_ID)){
             if (AbstractDungeon.player.getPower(MeterPower.POWER_ID).amount >=33){
                 AbstractDungeon.actionManager.addToBottom(new SFXAction(SoundEffects.VredOne.getKey()));
@@ -129,7 +137,6 @@ public class attFlamePort extends AbstractDynamicKombatCard {
             loadCardImage(IMGALT);
             this.textureImg = IMGALT;
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
             upgradeMagicNumber(UPGRADE_PLUS_TOASTY);
             initializeDescription();
         }

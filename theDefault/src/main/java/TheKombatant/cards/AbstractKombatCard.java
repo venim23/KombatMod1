@@ -6,6 +6,7 @@ import TheKombatant.util.Utilities;
 import basemod.abstracts.CustomCard;
 import basemod.patches.com.megacrit.cardcrawl.saveAndContinue.SaveAndContinue.Save;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -189,20 +190,25 @@ public abstract class AbstractKombatCard extends CustomCard {
     public void render(SpriteBatch sb)
     {
         super.render(sb);
-        RenderCardHeader(sb);
+        RenderHeader(sb,false);
     }
 
     @Override
     public void renderInLibrary(SpriteBatch sb)
     {
         super.renderInLibrary(sb);
-        RenderCardHeader(sb);
+        RenderHeader(sb,false);
     }
+
+    public void renderInSingleCardPopup(final SpriteBatch sb) {
+            this.RenderHeader(sb, true);
+    }
+
 
     private void RenderCardHeader(SpriteBatch sb)
     {
 
-        if (this.cardheader != null)
+
         {
             if (!this.isFlipped)//room == null || !(room.event instanceof GremlinMatchGame))
             {
@@ -231,6 +237,51 @@ public abstract class AbstractKombatCard extends CustomCard {
                 FontHelper.cardTitleFont.getData().setScale(originalScale);
             }
         }
+    }
+
+    protected String GetHeaderText() {
+        return null;
+    }
+
+    protected void RenderHeader(final SpriteBatch sb, final boolean isCardPopup) {
+        if (this.cardheader == null || this.isFlipped || this.isLocked || this.transparency <= 0.0f) {
+            return;
+        }
+        BitmapFont font;
+        float xPos;
+        float yPos;
+        float offsetY;
+        if (isCardPopup) {
+            font = FontHelper.SCP_cardTitleFont_small;
+            xPos = Settings.WIDTH / 2.0f + 10.0f * Settings.scale;
+            yPos = Settings.HEIGHT / 2.0f + 393.0f * Settings.scale;
+            offsetY = 0.0f;
+
+            if (this.upgraded) {
+                loadCardImage(this.textureImg);
+            }
+        }
+        else {
+            font = FontHelper.cardTitleFont_small;
+            xPos = this.current_x;
+            yPos = this.current_y;
+            offsetY = 400.0f * Settings.scale * this.drawScale / 2.0f;
+        }
+        final BitmapFont.BitmapFontData fontData = font.getData();
+        final float originalScale = fontData.scaleX;
+        float scaleMulti = 0.8f;
+        final int length = this.cardheader.NAME.length();
+        if (length > 20) {
+            scaleMulti -= 0.02f * (length - 20);
+            if (scaleMulti < 0.5f) {
+                scaleMulti = 0.5f;
+            }
+        }
+        fontData.setScale(scaleMulti * (isCardPopup ? 1.0f : this.drawScale));
+        final Color color = Color.GOLD.cpy();
+        color.a = this.transparency;
+        FontHelper.renderRotatedText(sb, font, this.cardheader.NAME, xPos, yPos, 0.0f, offsetY, this.angle, true, color);
+        fontData.setScale(originalScale);
     }
 
 

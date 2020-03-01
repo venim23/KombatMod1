@@ -35,9 +35,9 @@ public class ExtenderAction extends AbstractGameAction {
         if (AbstractDungeon.player.hasPower(HatTrickPower.POWER_ID)){
             CARDDRAW += p.getPower(HatTrickPower.POWER_ID).amount;
         }
-        AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(EXTENDERENERGY));
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(CARDDRAW));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new ChainedPower(p,CHAINVALUE), CHAINVALUE));
+        AbstractDungeon.actionManager.addToTop(new GainEnergyAction(EXTENDERENERGY));
+        AbstractDungeon.actionManager.addToTop(new DrawCardAction(CARDDRAW));
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p,p,new ChainedPower(p,CHAINVALUE), CHAINVALUE));
         isDone = true;
     }
 }

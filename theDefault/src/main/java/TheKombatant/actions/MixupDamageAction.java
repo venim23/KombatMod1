@@ -48,7 +48,7 @@ public class MixupDamageAction extends AbstractGameAction {
             dmgvalue += p.getPower(DrunkenFistPower.POWER_ID).amount;
         }
         */
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, dmgvalue), AttackEffect.BLUNT_HEAVY));
+        AbstractDungeon.actionManager.addToTop(new DamageAction(m, new DamageInfo(p, dmgvalue), AttackEffect.BLUNT_HEAVY));
         isDone = true;
     }
     // might change to use calculate modified card damage on each card instead

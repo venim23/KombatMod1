@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static TheKombatant.Kombatmod.makePowerPath;
@@ -56,7 +57,7 @@ public class ToxicPower extends AbstractPower implements CloneablePowerInterface
     @Override
     public void atStartOfTurnPostDraw() {
         AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(randomMonster, AbstractDungeon.player, new WeakPower(randomMonster, this.amount, false),this.amount));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(randomMonster, AbstractDungeon.player, new PoisonPower(randomMonster, this.owner, this.amount),this.amount));
 
 
     }

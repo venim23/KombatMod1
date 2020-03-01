@@ -19,13 +19,17 @@
                 "NAME": "Toasty",
                 "DESCRIPTIONS": ["When attacked this turn, this creature takes #b", " Additional Damage."]
         },
-        "TheKombatant:TocixAirPower": {
+        "TheKombatant:ToxicAirPower": {
                 "NAME": "Toxic Air",
                 "DESCRIPTIONS": ["At the start of your turn, apply #b", " #yPoison to a random enemy."]
         },
         "TheKombatant:DarknessPower": {
                 "NAME": "Darkness",
                 "DESCRIPTIONS": ["Currently granting #yRetain #b", ", Goes away next turn.", ", Goes away next turn."]
+        },
+        "TheKombatant:ImpaledPower": {
+                "NAME": "Impaled",
+                "DESCRIPTIONS": ["At the end of each of your turns, Shao Kahn steals #r", " #rHP from you."]
         },
         "TheKombatant:PosessedPower": {
                 "NAME": "Possessed",
@@ -34,6 +38,10 @@
         "TheKombatant:BlazePower": {
                 "NAME": "Undying Blaze",
                 "DESCRIPTIONS": ["Prevents #yToasty from being removed at the end of #b", " Turn."," Turns."]
+        },
+        "TheKombatant:ElderGodPower": {
+                "NAME": "Elder God's Council",
+                "DESCRIPTIONS": ["At the beginning of your turn, draw #b", " Kards. NL Gain #b","% #yMeter. NL Refund the cost of the first #b"," Kards played."]
         },
         "TheKombatant:DrunkenFistPower": {
                 "NAME": "Drunken Fist",

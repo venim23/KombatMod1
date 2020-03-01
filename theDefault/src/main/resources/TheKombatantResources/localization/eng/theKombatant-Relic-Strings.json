@@ -31,21 +31,21 @@
     "NAME": "Core: Cyrax",
     "FLAVOR": "Core - LK 4D4",
     "DESCRIPTIONS": [
-      "When you play #y5 Attacks in a turn, apply #b1 #yWeak to ALL enemies."
+      "When you play #y5 Attacks in a turn, apply #b2 #yWeak to ALL enemies."
     ]
   },
   "TheKombatant:CoreSektorRelic": {
     "NAME": "Core: Sektor",
     "FLAVOR": "Core - LK 9T9",
     "DESCRIPTIONS": [
-      "When you play #y5 Attacks in a turn, Deal #b3 damage to ALL enemies."
+      "When you play #y5 Attacks in a turn, Deal #b5 damage to ALL enemies."
     ]
   },
   "TheKombatant:CoreSmokeRelic": {
     "NAME": "Core: Smoke",
     "FLAVOR": "Core - LK 7T2",
     "DESCRIPTIONS": [
-      "When you play #y5 Attacks in a turn, gain #b4 Block."
+      "When you play #y5 Attacks in a turn, gain #b6 Block."
     ]
   },
   "TheKombatant:BookofBoonRelic": {

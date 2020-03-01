@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
@@ -33,6 +34,7 @@ import org.apache.logging.log4j.Logger;
 import TheKombatant.cards.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static TheKombatant.Kombatmod.*;
 import static TheKombatant.characters.TheKombatant.Enums.COLOR_SLATE;
@@ -102,6 +104,16 @@ public class TheKombatant extends CustomPlayer {
             "TheKombatantResources/images/char/defaultCharacter/orb/layer3d.png",
             "TheKombatantResources/images/char/defaultCharacter/orb/layer4d.png",
             "TheKombatantResources/images/char/defaultCharacter/orb/layer5d.png",};
+
+
+    public List<CutscenePanel> getCutscenePanels() {
+        final List<CutscenePanel> panels = new ArrayList<CutscenePanel>();
+        panels.add(new CutscenePanel("TheKombatantResources/images/scenes/end1.png"));
+        panels.add(new CutscenePanel("TheKombatantResources/images/scenes/end2.png"));
+        panels.add(new CutscenePanel("TheKombatantResources/images/scenes/end3.png"));
+        return panels;
+    }
+
 
     // =============== /TEXTURES OF BIG ENERGY ORB/ ===============
     public void reloadAnimation(String key)

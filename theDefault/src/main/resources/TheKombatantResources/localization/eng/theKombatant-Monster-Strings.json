@@ -1,0 +1,15 @@
+{
+  "TheKombatant:ShaoKahn":{
+    "MOVES" : [
+      "Out of the Way",
+      "Shoulder Charge",
+      "Mocking Laugh",
+      "Impaling Spear",
+      "Heavy Hammer",
+      "Hurtful Words"
+    ],
+    "NAME" : "Emperor Shao Kahn",
+    "DIALOG": [
+    ]
+  }
+}

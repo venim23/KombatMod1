@@ -5,9 +5,13 @@ import TheKombatant.cards.AbstractDynamicKombatCard;
 import TheKombatant.characters.TheKombatant;
 import TheKombatant.patches.CardTagEnum;
 import TheKombatant.powers.DarknessPower;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.FetchAction;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.ShuffleAction;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -45,6 +49,7 @@ public class skillDarkness extends AbstractDynamicKombatCard {
 
     private static final int COST = 0;
     private static final int BLOCK = 6;
+    private static final int BLOCKUP = 1;
     private static final int CARDS = 1;
 
 
@@ -71,12 +76,14 @@ public class skillDarkness extends AbstractDynamicKombatCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(magicNumber));
+
 
         if (upgraded){
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new RetainCardPower(p,1),1));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new DarknessPower(p,1),1));
+            AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(p.drawPile, p.discardPile, 1));
+            AbstractDungeon.actionManager.addToBottom(new ShuffleAction(p.drawPile));
         }
+
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(magicNumber));
 
 
     }
@@ -86,6 +93,7 @@ public class skillDarkness extends AbstractDynamicKombatCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeBlock(BLOCKUP);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
